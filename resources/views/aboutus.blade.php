@@ -32,7 +32,7 @@
                 </button>
                 <!-- customer login -->
                 <div class=" d-flex mx-2 d-md-none ">
-                    <a href='./login.html' class="login_checked btn btn-primary ">
+                    <a href='{{route('login')}}' class="login_checked btn btn-primary ">
                         <!-- <i class="bi bi-coin"></i> -->
                         Sign in
                     </a>
@@ -43,15 +43,15 @@
             <div class="collapse navbar-collapse justify-content-end  " id="navbarNavAltMarkup">
                 <div class="d-flex flex-row justify-content-center ">
                     <div class="navbar-nav align-items-center">
-                        <a class="nav-link text-black active" aria-current="page" href="./index.html">Home</a>
-                        <a class="nav-link text-black" href="./jobs.html">Jobs</a>
-                        <a class="nav-link text-black" href="./compenies.html">Companies</a>
-                        <a class="nav-link text-black " href="./contactus.html" tabindex="-1">Contact Us</a>
+                        <a class="nav-link text-white active" aria-current="page" href="{{route('home')}}">Home</a>
+                            <a class="nav-link text-white" href="{{route('jobs')}}">Jobs</a>
+                            <a class="nav-link text-white" href="{{route('compenies')}}">Companies</a>
+                            <a class="nav-link text-white" href="{{route('connectus')}}" tabindex="-1">Contact Us</a>
 
                     </div>
                 </div>
                 <div class=" d-none d-md-flex">
-                    <a href='./login.html' class="login_checked btn btn-primary mx-3 d-none d-md-flex ">
+                    <a href='{{route('login')}}' class="login_checked btn btn-primary mx-3 d-none d-md-flex ">
                         login
                     </a>
                     <!-- <a href='./profile.html'><i class="profile bi bi-person-fill pointer text-black "

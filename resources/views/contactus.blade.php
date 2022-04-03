@@ -91,10 +91,10 @@
             <div class="collapse navbar-collapse justify-content-end  " id="navbarNavAltMarkup">
                 <div class="d-flex flex-row justify-content-center ">
                     <div class="navbar-nav align-items-center">
-                        <a class="nav-link text-black active" aria-current="page" href="./index.html">Home</a>
-                        <a class="nav-link text-black" href="./jobs.html">Jobs</a>
-                        <a class="nav-link text-black" href="./compenies.html">Companies</a>
-                        <a class="nav-link text-black " href="./contactus.html" tabindex="-1">Contact Us</a>
+                        <a class="nav-link text-black active" aria-current="page" href="{{route('home')}}">Home</a>
+                            <a class="nav-link text-black" href="{{route('jobs')}}">Jobs</a>
+                            <a class="nav-link text-black" href="{{route('compenies')}}">Companies</a>
+                            <a class="nav-link text-black" href="{{route('connectus')}}" tabindex="-1">Contact Us</a>
 
                     </div>
                 </div>

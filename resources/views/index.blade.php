@@ -14,21 +14,21 @@
     <link rel="stylesheet" href="./css/main.css">
     <title>Finder</title>
     <style>
-        .parners {
-            position: relative;
-            bottom: -100px;
-        }
+    .parners {
+        position: relative;
+        bottom: -100px;
+    }
 
-        .campany_image {
-            width: 150px;
-            height: auto;
-            /* border:1px solid rgb(192, 192, 192) ; */
-            border-radius: 20px;
-        }
+    .campany_image {
+        width: 150px;
+        height: auto;
+        /* border:1px solid rgb(192, 192, 192) ; */
+        border-radius: 20px;
+    }
 
-        .campany_image img {
-            border-radius: inherit;
-        }
+    .campany_image img {
+        border-radius: inherit;
+    }
     </style>
 
 </head>
@@ -41,14 +41,13 @@
             <div class="container-fluid  container-lg ">
                 <a class="navbar-brand font-lg text-white" href="./index.html">Finder</a>
                 <div class="d-flex flex-row  align-items-center ">
-                    <button class="navbar-toggler"  data-bs-toggle="collapse"
-                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <i class="bi bi-list text-white" ></i>
+                    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="bi bi-list text-white"></i>
                     </button>
                     <!-- customer login -->
                     <div class=" d-flex mx-2 d-md-none ">
-                        <a href='./login.html' class="login_checked btn btn-bordre text-light  mx-2 border-left  hover">
+                        <a href="{{route('login')}}" class="login_checked btn btn-bordre text-light  mx-2 border-left  hover">
                             <!-- <i class="bi bi-coin"></i> -->
                             login
                         </a>
@@ -59,15 +58,15 @@
                 <div class="collapse navbar-collapse justify-content-between  " id="navbarNavAltMarkup">
                     <div class="d-flex flex-row justify-content-center ">
                         <div class="navbar-nav align-items-center">
-                            <a class="nav-link text-white active" aria-current="page" href="./index.html">Home</a>
-                            <a class="nav-link text-white" href="./jobs.html">Jobs</a>
-                            <a class="nav-link text-white" href="./compenies.html">Companies</a>
-                            <a class="nav-link text-white " href="./contactus.html" tabindex="-1">Contact Us</a>
+                            <a class="nav-link text-white active" aria-current="page" href="{{route('home')}}">Home</a>
+                            <a class="nav-link text-white" href="{{route('jobs')}}">Jobs</a>
+                            <a class="nav-link text-white" href="{{route('compenies')}}">Companies</a>
+                            <a class="nav-link text-white" href="{{route('connectus')}}" tabindex="-1">Contact Us</a>
 
                         </div>
                     </div>
                     <div class=" d-none d-md-flex">
-                        <a href='./login.html' class="login_checked btn  text-light  mx-2 border-left  hover">
+                        <a href="{{route('login')}}" class="login_checked btn  text-light  mx-2 border-left  hover">
                             <!-- <i class="bi bi-coin"></i> -->
                             login
                         </a>
@@ -409,9 +408,9 @@
                     <div class="container">
                         <div class="carousel-caption">
                             <h1 class="text-black">You looking for your dearm job?</h1>
-                            <p class="color-gray">Just register now and start your journey 
-                               .</p>
-                            <p><a class="btn btn-bordre text-black" href="./login.html">Login</a></p>
+                            <p class="color-gray">Just register now and start your journey
+                                .</p>
+                            <p><a class="btn btn-bordre text-black" href="{{route('login')}}">Login</a></p>
                         </div>
                     </div>
                 </div>
@@ -784,7 +783,7 @@
                                     <a href="./compenies.html" class="text-white">Compenies</a>
                                 </li>
                                 <li class="login_checked d-flex">
-                                    <a href="./login.html" class=" btn btn-bordre mt-2">Login</a>
+                                    <a href="{{route('login')}}" class=" btn btn-bordre mt-2">Login</a>
                                     <div class=" btn btn-bordre mt-2 mx-2">العربية|</div>
                                 </li>
 
@@ -796,7 +795,7 @@
                             <div class="d-flex justify-content-center h-100 mt-4  col-12 col-lg-6">
                                 <div class="search shadow-sm border-gray w-100 row">
                                     <input type="text" class="search-input  " placeholder="Get in tuch..." name="">
-                                    <a href="./jobs.html" class="search-icon "> <i class="bi bi-blus"></i> Go </a>
+                                    <a href="{{route('jobs')}}" class="search-icon "> <i class="bi bi-blus"></i> Go </a>
                                 </div>
                             </div>
 
@@ -817,8 +816,8 @@
         </section>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
     <!-- MDB -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
     <!-- <script  src="./utils/bootstramp/bootstrap.min.js"></script> -->

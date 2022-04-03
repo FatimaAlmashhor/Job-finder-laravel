@@ -81,7 +81,7 @@
     <!-- nav bar -->
     <nav class="navbar navbar-expand-md border-bottom bg-white  text-black navbar-light  d-flex flex-row ">
         <div class="container-fluid  container-lgs">
-          <a class="navbar-brand font-lg text-black" href="./index.html">Finder</a>
+          <a class="navbar-brand font-lg text-black" href="{{route('home')}}">Finder</a>
         </div>
       </nav>
     <main class="my-6 ">
@@ -100,7 +100,7 @@
                                 <div>
                                     <div class="bg-purple-primary w-100">
                                         <div class=" container px-4 pt-0 pb-4 cover">
-                                            <a href='./index.html'>
+                                            <a href='{{route('home')}}'>
                                                 <i class="bi bi-arrow-left-short text-white" style="font-size: 2rem;"></i>
                                             </a>
                                             <div class="media  d-flex flex-row align-items-end profile-head">
@@ -178,7 +178,7 @@
                                                         </li>
                                                         <li
                                                             class=" dashboard-side list-group-item py-2 d-flex justify-content-between pointer">
-                                                            <a class="text-black" href="./index.html">Home</a>
+                                                            <a class="text-black" href="{{route('home')}}">Home</a>
                                                             <!-- <strong>$20</strong> -->
                                                         </li>
                                                         <li
