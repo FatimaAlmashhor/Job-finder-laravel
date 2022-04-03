@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css"
+        integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <title>Finder jobs Details</title>
+</head>
+
+<body>
+    <!-- nav bar -->
+
+    <nav class="navbar navbar-expand-md border-bottom  bg-white text-black navbar-light  d-flex flex-row ">
+        <div class="container-fluid container-lg ">
+            <a class="navbar-brand font-lg text-black" href="./index.html">Finder</a>
+            <div class="d-flex flex-row  align-items-center ">
+                <button class="navbar-toggler" type="button " data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- customer login -->
+                <div class=" d-flex mx-2 d-md-none ">
+                    <a href='./login.html' class="login_checked btn btn-primary ">
+                        <!-- <i class="bi bi-coin"></i> -->
+                        Sign in
+                    </a>
+                    <a href='./profile.html'><i class="profile bi bi-person-fill pointer  text-black"
+                            style="font-size: 2rem;  "></i></a>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end  " id="navbarNavAltMarkup">
+                <div class="d-flex flex-row justify-content-center ">
+                    <div class="navbar-nav align-items-center">
+                        <a class="nav-link text-black active" aria-current="page" href="./index.html">Home</a>
+                        <a class="nav-link text-black" href="./jobs.html">Jobs</a>
+                        <a class="nav-link text-black" href="./compenies.html">Companies</a>
+                        <a class="nav-link text-black " href="./contactus.html" tabindex="-1">Contact Us</a>
+
+                    </div>
+                </div>
+                <div class=" d-none d-md-flex">
+                    <a href='./login.html' class="login_checked btn btn-primary mx-3 d-none d-md-flex ">
+                        login
+                    </a>
+                    <a href='./profile.html'><i class="profile bi bi-person-fill pointer text-black "
+                            style="font-size: 2rem;  "></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="container mx-auto my-6 d-flex justify-content-center">
+        <div class=" col-12 col-lg-7 mb-2  position-sticky">
+            <div class="card w-100 h-100">
+                <div class="w-100 bg-white-gray p-4 shadow  rounded-top ">
+
+                    <!-- top job detila  -->
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h3 class="heading">Software Architect</h3>
+                            <p class="m-0 p-1 text-black">Riddle </p>
+                            <!-- location and remote  -->
+                            <div class="d-flex flex-row align-items-center">
+                                <p class=" p-1 color-gray">US - lose anglous</p>
+                                <p class="p-1 mx-2">Remote</p>
+                            </div>
+                            <!-- div the price and work -->
+                            <div class="d-flex flex-row">
+                                <div
+                                    class='badge  bg-white-gray border-gray d-flex flex-row justify-content-center align-items-center'>
+                                    <p class="m-0 p-1 color-gray">$2000 - $3000</p>
+                                </div>
+                                <div
+                                    class='badge mx-3 bg-white-gray border-gray text-black d-flex flex-row justify-content-center align-items-center'>
+                                    <p class="m-0 p-1 color-gray">Full time</p>
+                                </div>
+                            </div>
+
+                            <!-- button for apply -->
+                            <button class="btn bg-primary mt-3 px-4 py-1">
+                                <p class="p-0 m-0 p-1 color-white">Apply now</p>
+                            </button>
+                        </div>
+                        <div class="badge text-black"> <i class="bi bi-bookmark  save-icon"
+                                style="font-size: 1.5rem;"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-3">
+                    <div class="section border-bottom">
+                        <h4>Job Detils</h4>
+                        <div class="my-3">
+                            <h6>Salary : </h6>
+                            <p class="color-gray font-sm"> $2000 - $3000</p>
+                        </div>
+                        <div class="my-3">
+                            <h6>Job type : </h6>
+                            <p class="color-gray font-sm"> Full time</p>
+                        </div>
+                        <div class="my-3">
+                            <h6>Number of hires for this role: </h6>
+                            <p class="color-gray font-sm"> 1</p>
+                        </div>
+                    </div>
+                    
+                    <div class="section border-bottom my-3">
+                        <h4>Qualifications</h4>
+                        <div class="my-3">
+                            <ul class="mx-3 dot">
+                                <li><i class="bi bi-dot "></i>Day Shift (Required)</li>
+                                <li><i class="bi bi-dot "></i>Day Shift (Required)</li>
+                                <li><i class="bi bi-dot "></i>Day Shift (Required)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="section border-bottom my-3">
+                        <h4>Benefits</h4>
+                        <small>Pulled from the full job description</small>
+                    </div>
+
+
+                    <div class="section border-bottom my-3 py-3">
+                        <h4>Full Job Description</h4>
+                        <small>We are a modern, high quality specialty dental practice seeking a true team player to join our fun and professional family. Our office is an extremely safe environment with infection control protocols that go far beyond current standards.</small>
+                        <br/>
+                        <br/>
+                        <small>
+                            If you are a nice, honest, and reliable team player, we will train you on the rest. Our biggest requirement: you have to enjoy your work and be a people person - after all, we spend a lot of time together.
+                        </small>
+                    </div>
+
+
+                    <div class="section border-bottom my-3 py-3">
+                        <h4>Location
+                           </h4>
+                        <small> Stonestown Endodontics in San Francisco, CA 94132</small>
+                        <br/>
+                        <br/>
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <section class="">
+            <!-- Footer -->
+            <footer class="bg-purple-primary text-white">
+                <!-- Grid container -->
+                <div class="container p-4">
+                    <!--Grid row-->
+                    <div class="row">
+                        <!--Grid column-->
+                        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                            <h4 class="text-uppercase">Finder</h4>
+
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+                                molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae
+                                aliquam voluptatem veniam, est atque cumque eum delectus sint!
+                            </p>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                            <h5 class="text-uppercase">About us</h5>
+
+                            <ul class="list-unstyled mb-0">
+                                <li class="mt-3">
+                                    <a href="./aboutus.html" class="text-white">About us</a>
+                                </li>
+                                <li>
+                                    <a href="./ourservices.html" class="text-white">Our service</a>
+                                </li>
+                                <li>
+                                    <a href="./contactus.html" class="text-white">Contect us</a>
+                                </li>
+                                <li class="d-flex flex-row my-2">
+                                    <a href="#!" class="text-white mx-2"><i class="bi bi-twitter"></i></a>
+                                    <a href="#!" class="text-white mx-2"><i class="bi bi-facebook"></i></a>
+                                    <a href="#!" class="text-white mx-2"><i class="bi bi-linkedin"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                            <h5 class="text-uppercase mb-0">Importents Pages</h5>
+
+                            <ul class="list-unstyled">
+                                <li class="mt-3">
+                                    <a href="./jobs.html" class="text-white">Jobs</a>
+                                </li>
+                                <li>
+                                    <a href="./compenies.html" class="text-white">Compenies</a>
+                                </li>
+                                <li class="login_checked d-flex">
+                                    <a href="./login.html" class=" btn btn-bordre mt-2">Login</a>
+                                    <div class=" btn btn-bordre mt-2 mx-2">العربية|</div>
+                                </li>
+                              
+
+                            </ul>
+                        </div>
+                        <!--Grid column-->
+                        <div>
+                            <div class="d-flex justify-content-center h-100 mt-4  col-12 col-lg-6">
+                                <div class="search shadow-sm border-gray w-100 row">
+                                    <input type="text" class="search-input  " placeholder="Get in tuch..." name="">
+                                    <a href="./jobs.html" class="search-icon "> <i class="bi bi-blus"></i> Go </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--Grid row-->
+                </div>
+                <!-- Grid container -->
+
+                <!-- Copyright -->
+                <div class="text-center p-3 bg-white color-gray">
+                    © 2022 Copyright:
+                    <a class="text-black" href="https://mdbootstrap.com/">@FatimaAlmashhor</a>
+                </div>
+                <!-- Copyright -->
+            </footer>
+            <!-- Footer -->
+        </section>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- <script  src="./utils/bootstramp/bootstrap.min.js"></script> -->
+    <!-- <script type='module' src="./js/main.js"></script> -->
+</body>
+
+</html>
