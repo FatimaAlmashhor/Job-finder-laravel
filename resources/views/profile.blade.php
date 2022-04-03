@@ -85,14 +85,11 @@
                                     </div>
                                     <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                                         <div class="navbar-nav  align-items-center ">
-                                            <a class="nav-link text-white active" aria-current="page"
-                                                href="./index.html">Home</a>
-                                            <a class="nav-link text-white" href="./jobs.html">Jobs</a>
-                                            <a class="nav-link text-white" href="./compenies.html">Companies</a>
-                                            <a class="nav-link text-white " href="./contactus.html"
-                                                tabindex="-1">Contact
-                                                Us</a>
-                                            <a href='./login.html' class="btn btn-primary mx-3 d-sm-none d-md-flex ">
+                                            <a class="nav-link text-white active" aria-current="page" href="{{route('home')}}">Home</a>
+                                             <a class="nav-link text-white" href="{{route('jobs')}}">Jobs</a>
+                                             <a class="nav-link text-white" href="{{route('compenies')}}">Companies</a>
+                                             <a class="nav-link text-white" href="{{route('connectus')}}" tabindex="-1">Contact Us</a>
+                                            <a href="{{route('login')}}" class="btn btn-primary mx-3 d-sm-none d-md-flex ">
                                                 login
                                             </a>
                                         </div>
@@ -103,7 +100,7 @@
                                 <div class="profile mr-3 d-flex flex-column"><img
                                         src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
                                         alt="..." width="130" class="rounded mb-2 img-thumbnail"><a
-                                        href="./editprofile.html" class="btn btn-outline-dark btn-sm btn-block">Edit
+                                        href="{{route('editprofile')}}" class="btn btn-outline-dark btn-sm btn-block">Edit
                                         profile</a></div>
 
                                 <div class="media-body mb-5 text-white mx-2">

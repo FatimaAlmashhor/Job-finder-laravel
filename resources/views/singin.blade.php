@@ -109,7 +109,7 @@
             </button>
             <!-- customer login -->
             <div class=" d-flex mx-2 d-md-none ">
-              <a href='./login.html' class="login_checked btn btn-primary ">
+              <a href='{{route('login')}}' class="login_checked btn btn-primary ">
                 <!-- <i class="bi bi-coin"></i> -->
                 Sign in
               </a>
@@ -120,15 +120,15 @@
           <div class="collapse navbar-collapse justify-content-end  " id="navbarNavAltMarkup">
             <div class="d-flex flex-row justify-content-center ">
               <div class="navbar-nav align-items-center">
-                <a class="nav-link text-black active" aria-current="page" href="./index.html">Home</a>
-                <a class="nav-link text-black" href="./jobs.html">Jobs</a>
-                <a class="nav-link text-black" href="./compenies.html">Companies</a>
-                <a class="nav-link text-black " href="./contactus.html" tabindex="-1">Contact Us</a>
+                <a class="nav-link text-black active" aria-current="page" href="{{route('home')}}">Home</a>
+                <a class="nav-link text-black" href="{{route('jobs')}}">Jobs</a>
+                <a class="nav-link text-black" href="{{route('compenies')}}">Companies</a>
+                <a class="nav-link text-black" href="{{route('connectus')}}" tabindex="-1">Contact Us</a>
     
               </div>
             </div>
             <div class=" d-none d-md-flex">
-              <a href='./login.html' class="login_checked btn btn-primary mx-3 d-none d-md-flex ">
+              <a href="{{route('login')}}" class="login_checked btn btn-primary mx-3 d-none d-md-flex ">
                 login
               </a>
               <!-- <a href='./profile.html'><i class="profile bi bi-person-fill pointer text-black "
@@ -170,8 +170,8 @@
                                                 <label for="exampleInputPassword1">Confirm your Password</label>
                                                 <input type='password' class="form-control" id="exampleInputPassword1">
                                             </div>
-                                            <p>You have account ? <span><a href='./login.html'>Login</a></span></p>
-                                            <a href='./profile.html' type="submit" class="btn btn-theme">Register</a>
+                                            <p>You have account ? <span><a href="{{route('login')}}">Login</a></span></p>
+                                            <a href='{{route('profile')}}' type="submit" class="btn btn-theme">Register</a>
                                         </form>
                                     </div>
                                 </div>
@@ -280,13 +280,13 @@
 
                             <ul class="list-unstyled">
                                 <li class="mt-3">
-                                    <a href="./jobs.html" class="text-white">Jobs</a>
+                                    <a href="{{route('jobs')}}" class="text-white">Jobs</a>
                                 </li>
                                 <li>
-                                    <a href="./compenies.html" class="text-white">Compenies</a>
+                                    <a href="{{route('compenies')}}" class="text-white">Compenies</a>
                                 </li>
                                 <li class="login_checked d-flex">
-                                    <a href="./login.html" class=" btn btn-bordre mt-2">Login</a>
+                                    <a href="{{route('login')}}" class=" btn btn-bordre mt-2">Login</a>
                                     <div class=" btn btn-bordre mt-2 mx-2">العربية|</div>
                                 </li>
                               
