@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\JobsController;
 use App\Http\Controllers\client\clientController;
 
 use Illuminate\Support\Facades\Route;
@@ -35,3 +36,7 @@ Route::get('/profile', [clientController::class, 'showProfile'])->name('profile'
 Route::get('/profile/edit', [clientController::class, 'showEditProfile'])->name('editprofile');
 
 Route::get('/compenies', [clientController::class, 'showCompenies'])->name('compenies');
+
+
+// admin routing
+Route::get('/admin', [JobsController::class, 'showJobs'])->name('admin/jobs');
