@@ -1,4 +1,4 @@
-@extends('layouts.admin_master_layout');
+@extends('layouts.admin_master_layout')
 @section('content')
     <!-- Content -->
     <div class="container-xxl flex-grow-1 container-p-y">
@@ -34,9 +34,9 @@
                                 </div>
 
                                 <!-- <div class="dt-buttons"><button class="dt-button add-new btn btn-primary mb-3 mb-md-0"
-                                                tabindex="0" aria-controls="DataTables_Table_0" type="button"
-                                                data-bs-toggle="modal" data-bs-target="#addPermissionModal"><span>Add
-                                                    Book</span></button> </div> -->
+                                                    tabindex="0" aria-controls="DataTables_Table_0" type="button"
+                                                    data-bs-toggle="modal" data-bs-target="#addPermissionModal"><span>Add
+                                                        Book</span></button> </div> -->
                                 <div class="dt-buttons"><a href='/admin/books/add'
                                         class="dt-button add-new btn btn-primary mb-3 mb-md-0" tabindex="0"
                                         aria-controls="DataTables_Table_0" data-bs-target="#addPermissionModal"><span>Add

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class CompeniesController extends Controller
 {
     //
-    function showCompnies()
+    function showCompenies()
     {
         return view('admin.compenies.compeniesList');
     }

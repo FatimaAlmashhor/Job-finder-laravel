@@ -8,4 +8,8 @@ use Illuminate\Http\Request;
 class UsersController extends Controller
 {
     //
+    function showUsers()
+    {
+        return view('admin.users.usersList');
+    }
 }

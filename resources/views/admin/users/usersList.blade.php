@@ -4,7 +4,7 @@
     <div class="container-xxl flex-grow-1 container-p-y">
 
 
-        <h4 class="fw-bold py-3 mb-2">Jobs List</h4>
+        <h4 class="fw-bold py-3 mb-2">users List</h4>
 
         <!-- <p class="mb-4">Books </p> -->
 
@@ -34,13 +34,13 @@
                                 </div>
 
                                 <!-- <div class="dt-buttons"><button class="dt-button add-new btn btn-primary mb-3 mb-md-0"
-                                                tabindex="0" aria-controls="DataTables_Table_0" type="button"
-                                                data-bs-toggle="modal" data-bs-target="#addPermissionModal"><span>Add
-                                                    Book</span></button> </div> -->
+                                                    tabindex="0" aria-controls="DataTables_Table_0" type="button"
+                                                    data-bs-toggle="modal" data-bs-target="#addPermissionModal"><span>Add
+                                                        Book</span></button> </div> -->
                                 <div class="dt-buttons"><a href='/admin/books/add'
                                         class="dt-button add-new btn btn-primary mb-3 mb-md-0" tabindex="0"
                                         aria-controls="DataTables_Table_0" data-bs-target="#addPermissionModal"><span>Add
-                                            job</span></a> </div>
+                                            user</span></a> </div>
                             </div>
                         </div>
                     </div>
@@ -103,7 +103,7 @@
                         <button type="button" class="btn-close btn-pinned" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                         <div class="text-center mb-4">
-                            <h3>Add New job</h3>
+                            <h3>Add New usere</h3>
                             <p>Permissions you may use and assign to your users.</p>
                         </div>
                         <form id="addPermissionForm" class="row fv-plugins-bootstrap5 fv-plugins-framework"

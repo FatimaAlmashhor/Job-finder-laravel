@@ -8,4 +8,8 @@ use Illuminate\Http\Request;
 class MejersController extends Controller
 {
     //
+    function showMajers()
+    {
+        return view('admin.mejers.mejersList');
+    }
 }

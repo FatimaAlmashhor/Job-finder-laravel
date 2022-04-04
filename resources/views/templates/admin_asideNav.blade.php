@@ -62,18 +62,68 @@
 
 
     <ul class="menu-inner py-1">
-        <!-- Apps & Pages -->
+        <!-- jobs -->
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Jobs </span>
         </li>
         <li class="menu-item">
-            <a href="/admin/books" class="menu-link">
+            <a href="{{ route('admin/jobs') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-calendar"></i>
-                <div data-i18n="Books">job list</div>
+                <div data-i18n="Jobs">Show list</div>
+            </a>
+        </li>
+        <!-- compenies -->
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Compenies </span>
+        </li>
+        <li class="menu-item">
+            <a href="{{ route('admin/compenies') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-calendar"></i>
+                <div data-i18n="Compenies">Show list</div>
+            </a>
+        </li>
+        <!-- Skills -->
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Skills </span>
+        </li>
+        <li class="menu-item">
+            <a href="{{ route('admin/skills') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-calendar"></i>
+                <div data-i18n="Skills">Show list</div>
+            </a>
+        </li>
+        <!-- Services -->
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Services </span>
+        </li>
+        <li class="menu-item">
+            <a href="{{ route('admin/services') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-calendar"></i>
+                <div data-i18n="Services">Show list</div>
             </a>
         </li>
 
+        <!-- Users -->
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Users </span>
+        </li>
+        <li class="menu-item">
+            <a href="{{ route('admin/users') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-calendar"></i>
+                <div data-i18n="Users">Show list</div>
+            </a>
+        </li>
 
+        <!-- Mejers -->
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Mejers </span>
+        </li>
+        <li class="menu-item">
+            <a href="{{ route('admin/mejers') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-calendar"></i>
+                <div data-i18n="Mejers">Mejers list</div>
+            </a>
+        </li>
 
     </ul>
 

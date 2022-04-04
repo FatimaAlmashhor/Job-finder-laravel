@@ -1,4 +1,4 @@
-@extends('layouts.admin_master_layout');
+@extends('layouts.admin_master_layout')
 @section('content')
     <!-- Content -->
     <div class="container-xxl flex-grow-1 container-p-y">
