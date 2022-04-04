@@ -27,7 +27,7 @@ Route::get('/ourservics', [clientController::class, 'showOurServices'])->name('o
 Route::get('/connectus', [clientController::class, 'showConnectUs'])->name('connectus');
 
 Route::get('/jobs', [clientController::class, 'showJobs'])->name('jobs');
-Route::get('/job/details', [clientController::class, 'showDetails'])->name('jobdetails');
+Route::get('/job/details', [clientController::class, 'showJobDetails'])->name('jobdetails');
 
 Route::get('/login', [clientController::class, 'showLogin'])->name('login');
 Route::get('/register', [clientController::class, 'showRegister'])->name('register');

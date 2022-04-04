@@ -1,89 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css"
-        integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./css/main.css">
-    <title>Finder jobs</title>
-    <style>
-        .profile-head {
-            transform: translateY(5rem)
-        }
-
-        .dashboard-side {
-            background: rgba(var(--bs-light-rgb), var(--bs-bg-opacity));
-        }
-
-        .dashboard-side:hover {
-            background: rgb(236, 236, 236);
-        }
-
-        .dashboard-side.active {
-            background: rgb(255, 255, 255);
-            /* border: 1px solid rgb(206, 190, 190); */
-            color: black;
-            transition: 0.3s;
-        }
-
-        .slid_bar {
-            min-height: 60vh;
-        }
-
-        .slid_bar_section {
-            position: relative;
-            top: 60px;
-        }
-
-        .profile_page {
-            display: none;
-        }
-
-        .profile_page.show {
-            display: block;
-        }
-
-        .avatar {
-            position: relative;
-        }
-
-        .avatar_icon {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            bottom: 35px;
-            right: 0px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: rgb(173, 173, 173);
-            cursor: pointer;
-        }
-
-        .avatar_icon:hover {
-            background-color: rgb(218, 218, 218);
-        }
-
-        .avatar_icon img {
-            font-size: 1.2rem;
-        }
-    </style>
-</head>
-
-<body class="">
-    <!-- nav bar -->
-    <nav class="navbar navbar-expand-md border-bottom bg-white  text-black navbar-light  d-flex flex-row ">
-        <div class="container-fluid  container-lgs">
-          <a class="navbar-brand font-lg text-black" href="{{route('home')}}">Finder</a>
-        </div>
-      </nav>
+@extends('layouts.client_master_layout');
+@section('content')
     <main class="my-6 ">
         <div class="">
             <div class=" mx-auto ">
@@ -654,93 +570,7 @@
             </div>
         </div>
     </main>
-    <footer>
-        <section class="">
-            <!-- Footer -->
-            <footer class="bg-purple-primary text-white">
-                <!-- Grid container -->
-                <div class="container p-4">
-                    <!--Grid row-->
-                    <div class="row">
-                        <!--Grid column-->
-                        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                            <h4 class="text-uppercase">Finder</h4>
 
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-                                molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae
-                                aliquam voluptatem veniam, est atque cumque eum delectus sint!
-                            </p>
-                        </div>
-                        <!--Grid column-->
-
-                        <!--Grid column-->
-                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                            <h5 class="text-uppercase">About us</h5>
-
-                            <ul class="list-unstyled mb-0">
-                                <li class="mt-3">
-                                    <a href="./aboutus.html" class="text-white">About us</a>
-                                </li>
-                                <li>
-                                    <a href="./ourservices.html" class="text-white">Our service</a>
-                                </li>
-                                <li>
-                                    <a href="./contactus.html" class="text-white">Contect us</a>
-                                </li>
-                                <li class="d-flex flex-row my-2">
-                                    <a href="#!" class="text-white mx-2"><i class="bi bi-twitter"></i></a>
-                                    <a href="#!" class="text-white mx-2"><i class="bi bi-facebook"></i></a>
-                                    <a href="#!" class="text-white mx-2"><i class="bi bi-linkedin"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!--Grid column-->
-
-                        <!--Grid column-->
-                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                            <h5 class="text-uppercase mb-0">Importents Pages</h5>
-
-                            <ul class="list-unstyled">
-                                <li class="mt-3">
-                                    <a href="./jobs.html" class="text-white">Jobs</a>
-                                </li>
-                                <li>
-                                    <a href="./compenies.html" class="text-white">Compenies</a>
-                                </li>
-                                <li class="login_checked d-flex">
-                                    <a href="./login.html" class=" btn btn-bordre mt-2">Login</a>
-                                    <div class=" btn btn-bordre mt-2 mx-2">العربية|</div>
-                                </li>
-
-
-                            </ul>
-                        </div>
-                        <!--Grid column-->
-                        <div>
-                            <div class="d-flex justify-content-center h-100 mt-4  col-12 col-lg-6">
-                                <div class="search shadow-sm border-gray w-100 row">
-                                    <input type="text" class="search-input  " placeholder="Get in tuch..." name="">
-                                    <a href="./jobs.html" class="search-icon "> <i class="bi bi-blus"></i> Go </a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <!--Grid row-->
-                </div>
-                <!-- Grid container -->
-
-                <!-- Copyright -->
-                <div class="text-center p-3 bg-white color-gray">
-                    © 2022 Copyright:
-                    <a class="text-black" href="https://mdbootstrap.com/">@FatimaAlmashhor</a>
-                </div>
-                <!-- Copyright -->
-            </footer>
-            <!-- Footer -->
-        </section>
-    </footer>
 
     <!-- skill modals  -->
     <div class="modal fade" id="add_skills_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -927,13 +757,7 @@
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <!-- <script  src="./utils/bootstramp/bootstrap.min.js"></script> -->
-    <script type='module' src="./js/main.js"></script>
+   
     <script src="./js/dashboard.js"></script>
     <script src="./js/modal.js"></script>
-</body>
-
-</html>
+    @endsection
