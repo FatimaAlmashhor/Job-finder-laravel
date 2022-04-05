@@ -13,11 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('mejers', function (Blueprint $table) {
+        Schema::create('job_details', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->unique();
+            $table->string('qualifications');
+            $table->string('benefits');
+            $table->string('description');
             $table->boolean('is_active')->default(1);
             $table->timestamps();
+            $table->unsignedBigInteger('job_id')->nullable();
+            $table->foreign('job_id')->references('id')->on('jobs')->onDelete('cascade');
+            $table->softDeletes();
         });
     }
 
@@ -28,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('job_details');
     }
 };

@@ -4,7 +4,8 @@
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="card mb-4">
             <h5 class="card-header">Add new skill</h5>
-            <form class="card-body" method="POST" action="/admin/categories/add" enctype="multipart/form-data">
+            <form class="card-body" method="POST" action="{{ route('admin/updateSkill') }}"
+                enctype="multipart/form-data">
 
                 <div class="row g-3">
                     <div class="col-md-9">

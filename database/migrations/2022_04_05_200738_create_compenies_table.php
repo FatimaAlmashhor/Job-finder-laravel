@@ -13,13 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('services', function (Blueprint $table) {
+        Schema::create('compenies', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->unique();
-            $table->string('image');
+            $table->string('name');
+            $table->string('icon');
+            $table->string('country');
+            $table->string('city');
             $table->string('description');
             $table->boolean('is_active')->default(1);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -30,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('compenies');
     }
 };

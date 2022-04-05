@@ -28,6 +28,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('compeny_id')->references('id')->on('compenies')->onDelete('cascade');
             $table->foreign('job_type_id')->references('id')->on('job_type')->onDelete('cascade');
+            $table->softDeletes();
         });
     }
 
@@ -38,5 +39,6 @@ return new class extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('jobs');
     }
 };
