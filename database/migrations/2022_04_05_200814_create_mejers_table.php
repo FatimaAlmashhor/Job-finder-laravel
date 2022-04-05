@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('mejer_job', function (Blueprint $table) {
+        Schema::create('mejers', function (Blueprint $table) {
             $table->id();
+            $table->string('title')->unique();
+            $table->boolean('is_active')->default(1);
             $table->timestamps();
-            $table->unsignedBigInteger('job_id')->nullable();
-            $table->unsignedBigInteger('mejer_id')->nullable();
-
-            $table->foreign('job_id')->references('id')->on('jobs')->onDelete('cascade');
-            $table->foreign('mejer_id')->references('id')->on('mejers')->onDelete('cascade');
+            $table->softDeletes();
         });
     }
 
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('mejers');
     }
 };
