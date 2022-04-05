@@ -6,7 +6,7 @@
             <h5 class="card-header">Add new skill</h5>
             <form class="card-body" method="POST" action="{{ route('admin/updateSkill') }}"
                 enctype="multipart/form-data">
-
+                @csrf
                 <div class="row g-3">
                     <div class="col-md-9">
                         <label class="form-label" for="multicol-username">title</label>
@@ -15,7 +15,7 @@
                     </div>
                     <div class="col-md-3 mt-5">
                         <label class="switch">
-                            <input type="checkbox" class="switch-input is-valid" checked />
+                            <input type="checkbox" name='is_active' class="switch-input is-valid" value='1' checked />
                             <span class="switch-toggle-slider">
                                 <span class="switch-on"></span>
                                 <span class="switch-off"></span>
