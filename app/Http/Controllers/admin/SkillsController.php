@@ -11,16 +11,20 @@ class SkillsController extends Controller
     //
     function show()
     {
-        return view('admin.skills.skillsList');
+        $skills = Skills::get();
+        // $skills->get
+        // return response($skills);
+        return view('admin.skills.skillsList')->with('skills' , $skills);
     }
     function edit(){
         return view('admin.skills.skills_form');
     }
     function upload(Request $request){
-        // $skill = Skills();
-        $title = $request->title ;
-        $title = $request->is_active ;
-        print_r($title);
+        $skill = new Skills();
+        $skill->title = $request->title ;
+        $skill->is_active = empty($request->is_active) ? 0 : 1 ;
+        $skill->save();
         
+        return redirect()->route('admin/skills');
     }
 }

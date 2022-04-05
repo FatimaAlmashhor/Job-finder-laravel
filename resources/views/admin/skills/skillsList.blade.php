@@ -34,9 +34,9 @@
                                 </div>
 
                                 <!-- <div class="dt-buttons"><button class="dt-button add-new btn btn-primary mb-3 mb-md-0"
-                                                        tabindex="0" aria-controls="DataTables_Table_0" type="button"
-                                                        data-bs-toggle="modal" data-bs-target="#addPermissionModal"><span>Add
-                                                            Book</span></button> </div> -->
+                                                                                                            tabindex="0" aria-controls="DataTables_Table_0" type="button"
+                                                                                                            data-bs-toggle="modal" data-bs-target="#addPermissionModal"><span>Add
+                                                                                                                Book</span></button> </div> -->
                                 <div class="dt-buttons"><a href='{{ route('admin/addSkill') }}'
                                         class="dt-button add-new btn btn-primary mb-3 mb-md-0" tabindex="0"
                                         aria-controls="DataTables_Table_0" data-bs-target="#addPermissionModal"><span>Add
@@ -70,6 +70,39 @@
 
                         </tr>
                         </tbody>
+                        @foreach ($skills as $skill)
+                            <tbody>
+                                <tr>
+                                    <td> <strong>
+                                            {{ $loop->iteration }}</strong></td>
+                                    <td>{{ $skill->id }}</td>
+                                    <td>
+                                        {{ $skill->title }}
+                                    </td>
+                                    <td><span class="badge bg-label-primary me-1">
+                                            {{ $skill->is_active ? 'active' : 'nonactive' }}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
+                                                data-bs-toggle="dropdown"><i
+                                                    class="bx bx-dots-vertical-rounded"></i></button>
+                                            <div class="dropdown-menu">
+                                                <form class="dropdown-item" action="/admin/books/edit" method="post">
+                                                    <button type="submit"><i class="bx bx-edit-alt me-1"></i> Edit</button>
+                                                </form>
+                                                <form class="dropdown-item" action="/admin/books/delete" method="post">
+                                                    <button type="submit"><i class="bx bx-trash me-1"></i> Delete</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        @endforeach
+
+
                     </table>
                     <div class="row mx-2">
                         <div class="col-sm-12 col-md-6">
@@ -93,11 +126,11 @@
                 </div>
             </div>
         </div>
-        <!--/ Permission Table -->
+        <!--/ skills Table -->
 
 
         <!-- Modal -->
-        <!-- Add Permission Modal -->
+        <!-- Add skills Modal -->
         <div class="modal fade" id="addPermissionModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-simple">
                 <div class="modal-content p-3 p-md-5">
@@ -135,50 +168,9 @@
                 </div>
             </div>
         </div>
-        <!--/ Add Permission Modal -->
+        <!--/ Add skills Modal -->
 
-        <!-- Edit Permission Modal -->
-        <div class="modal fade" id="editPermissionModal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-simple">
-                <div class="modal-content p-3 p-md-5">
-                    <div class="modal-body">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        <div class="text-center mb-4">
-                            <h3>Edit Permission</h3>
-                            <p>Edit permission as per your requirements.</p>
-                        </div>
-                        <div class="alert alert-warning" role="alert">
-                            <h6 class="alert-heading fw-bold mb-2">Warning</h6>
-                            <p class="mb-0">By editing the permission name, you might break the system permissions
-                                functionality. Please ensure you're absolutely certain before proceeding.</p>
-                        </div>
-                        <form id="editPermissionForm" class="row fv-plugins-bootstrap5 fv-plugins-framework"
-                            onsubmit="return false" novalidate="novalidate">
-                            <div class="col-sm-9 fv-plugins-icon-container">
-                                <label class="form-label" for="editPermissionName">Permission Name</label>
-                                <input type="text" id="editPermissionName" name="editPermissionName" class="form-control"
-                                    placeholder="Permission Name" tabindex="-1">
-                                <div class="fv-plugins-message-container invalid-feedback"></div>
-                            </div>
-                            <div class="col-sm-3 mb-3">
-                                <label class="form-label invisible d-none d-sm-inline-block">Button</label>
-                                <button type="submit" class="btn btn-primary mt-1 mt-sm-0">Update</button>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="editCorePermission">
-                                    <label class="form-check-label" for="editCorePermission">
-                                        Set as core permission
-                                    </label>
-                                </div>
-                            </div>
-                            <div></div><input type="hidden">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--/ Edit Permission Modal -->
+
 
         <!-- /Modal -->
 
