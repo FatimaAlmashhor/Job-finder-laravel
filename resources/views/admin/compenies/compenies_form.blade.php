@@ -4,7 +4,9 @@
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="card mb-4">
             <h5 class="card-header">Add new compeny</h5>
-            <form class="card-body" method="POST" action="/admin/categories/add" enctype="multipart/form-data">
+            <form class="card-body" method="POST" action={{ route('adminUploadCompeny') }}
+                enctype="multipart/form-data">
+                @csrf
                 <div class="input-group">
                     <input type="file" class="form-control" name='image' id="inputGroupFile02">
                     <label class="input-group-text" for="inputGroupFile02">Icon </label>
@@ -17,7 +19,7 @@
                     </div>
                     <div class="col-md-3 mt-5">
                         <label class="switch">
-                            <input type="checkbox" class="switch-input is-valid" checked />
+                            <input type="checkbox" class="switch-input is-valid" value='1' name='is_active' checked />
                             <span class="switch-toggle-slider">
                                 <span class="switch-on"></span>
                                 <span class="switch-off"></span>
@@ -38,8 +40,7 @@
                     </div>
                     <div class="col-md-6">
                         <label class="form-label" for="multicol-username">city</label>
-                        <input type="text" id="multicol-username" name='country' class="form-control"
-                            placeholder="Taiz" />
+                        <input type="text" id="multicol-username" name='city' class="form-control" placeholder="Taiz" />
                     </div>
                 </div>
                 <div class="pt-4">

@@ -34,10 +34,10 @@
                                 </div>
 
                                 <!-- <div class="dt-buttons"><button class="dt-button add-new btn btn-primary mb-3 mb-md-0"
-                                                    tabindex="0" aria-controls="DataTables_Table_0" type="button"
-                                                    data-bs-toggle="modal" data-bs-target="#addPermissionModal"><span>Add
-                                                        Book</span></button> </div> -->
-                                <div class="dt-buttons"><a href='/admin/books/add'
+                                                                        tabindex="0" aria-controls="DataTables_Table_0" type="button"
+                                                                        data-bs-toggle="modal" data-bs-target="#addPermissionModal"><span>Add
+                                                                            Book</span></button> </div> -->
+                                <div class="dt-buttons"><a href='{{ route('adminAddCompeny') }}'
                                         class="dt-button add-new btn btn-primary mb-3 mb-md-0" tabindex="0"
                                         aria-controls="DataTables_Table_0" data-bs-target="#addPermissionModal"><span>Add
                                             compeny</span></a> </div>
@@ -50,23 +50,45 @@
                         <thead>
                             <tr role="row">
                                 <th class="control sorting_disabled" rowspan="1" colspan="1"
-                                    style="width: 68px; display: none;" aria-label=""></th>
+                                    style="width: 68px; display: none;" aria-label="">#</th>
+                                <th class="control sorting_disabled" rowspan="1" colspan="1"
+                                    style="width: 68px; display: none;" aria-label="">ID</th>
                                 <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                                     colspan="1" style="width: 168px;" aria-label="Name: activate to sort column ascending">
-                                    Image</th>
+                                    Icon</th>
                                 <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                                     colspan="1" style="width: 168px;" aria-label="Name: activate to sort column ascending">
                                     Name</th>
                                 <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 280px;"
-                                    aria-label="Assigned To">Assigned To</th>
-                                <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 300px;"
-                                    aria-label="Created Date">Created Date</th>
+                                    aria-label="Assigned To">Activation</th>
+
                                 <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 197px;"
                                     aria-label="Actions">Actions</th>
                             </tr>
                         </thead>
 
-                        </tr>
+                        @foreach ($compenies as $compeny)
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        {{ $loop->itration }}
+                                    </td>
+                                    <td>
+                                        {{ $compeny->id }}
+                                    </td>
+                                    <td>
+                                        {{ $compeny->image }}
+                                    </td>
+                                    <td>
+                                        {{ $compeny->name }}
+                                    </td>
+                                    <td>
+                                        {{ $compeny->is_active ? 'Action' : 'Nonactive' }}
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        @endforeach
                         </tbody>
                     </table>
                     <div class="row mx-2">

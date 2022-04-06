@@ -16,7 +16,7 @@ class SkillsController extends Controller
         // return response($skills);
         return view('admin.skills.skillsList')->with('skills' , $skills);
     }
-    function edit(){
+    function add(){
         return view('admin.skills.skills_form');
     }
     function upload(Request $request){

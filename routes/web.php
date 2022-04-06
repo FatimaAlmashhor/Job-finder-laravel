@@ -44,13 +44,20 @@ Route::get('/compenies', [clientController::class, 'showCompenies'])->name('comp
 
 
 // admin routing
-Route::get('/admin', [JobsController::class, 'showJobs'])->name('admin/jobs');
-Route::get('/admin/campenies', [CompeniesController::class, 'showCompenies'])->name('admin/compenies');
-Route::get('/admin/mejers', [MejersController::class, 'showMajers'])->name('admin/mejers');
-Route::get('/admin/services', [ServicesController::class, 'showServices'])->name('admin/services');
+Route::get('/admin', [JobsController::class, 'showJobs'])->name('adminJobs');
 
-Route::get('/admin/skills', [SkillsController::class, 'show'])->name('admin/skills');
-Route::get('/admin/skills/add', [SkillsController::class, 'edit'])->name('admin/addSkill');
-Route::post('/admin/skills/upload', [SkillsController::class, 'upload'])->name('admin/updateSkill');
+// compenies
+Route::get('/admin/campenies', [CompeniesController::class, 'show'])->name('adminCompenies');
+Route::get('/admin/campenies/add', [CompeniesController::class, 'add'])->name('adminAddCompeny');
+Route::post('/admin/campenies/upload', [CompeniesController::class, 'upload'])->name('adminUploadCompeny');
 
-Route::get('/admin/users', [UsersController::class, 'showUsers'])->name('admin/users');
+
+Route::get('/admin/mejers', [MejersController::class, 'showMajers'])->name('adminMejers');
+Route::get('/admin/services', [ServicesController::class, 'showServices'])->name('adminServices');
+
+// skilla
+Route::get('/admin/skills', [SkillsController::class, 'show'])->name('adminSkills');
+Route::get('/admin/skills/add', [SkillsController::class, 'add'])->name('adminAddSkill');
+Route::post('/admin/skills/upload', [SkillsController::class, 'upload'])->name('adminUpdateSkill');
+
+Route::get('/admin/users', [UsersController::class, 'showUsers'])->name('adminUsers');

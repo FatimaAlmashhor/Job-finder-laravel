@@ -67,7 +67,7 @@
             <span class="menu-header-text">Jobs </span>
         </li>
         <li class="menu-item">
-            <a href="{{ route('admin/jobs') }}" class="menu-link">
+            <a href="{{ route('adminJobs') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-calendar"></i>
                 <div data-i18n="Jobs">Show list</div>
             </a>
@@ -77,17 +77,17 @@
             <span class="menu-header-text">Compenies </span>
         </li>
         <li class="menu-item">
-            <a href="{{ route('admin/compenies') }}" class="menu-link">
+            <a href="{{ route('adminCompenies') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-calendar"></i>
                 <div data-i18n="Compenies">Show list</div>
             </a>
         </li>
         <!-- Skills -->
-        <li class="menu-header small text-uppercase">
+        {{-- <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Skills </span>
-        </li>
+        </li> --}}
         <li class="menu-item">
-            <a href="{{ route('admin/skills') }}" class="menu-link">
+            <a href="{{ route('adminSkills') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-calendar"></i>
                 <div data-i18n="Skills">Show list</div>
             </a>
@@ -97,7 +97,7 @@
             <span class="menu-header-text">Services </span>
         </li>
         <li class="menu-item">
-            <a href="{{ route('admin/services') }}" class="menu-link">
+            <a href="{{ route('adminServices') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-calendar"></i>
                 <div data-i18n="Services">Show list</div>
             </a>
@@ -108,7 +108,7 @@
             <span class="menu-header-text">Users </span>
         </li>
         <li class="menu-item">
-            <a href="{{ route('admin/users') }}" class="menu-link">
+            <a href="{{ route('adminUsers') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-calendar"></i>
                 <div data-i18n="Users">Show list</div>
             </a>
@@ -119,7 +119,7 @@
             <span class="menu-header-text">Mejers </span>
         </li>
         <li class="menu-item">
-            <a href="{{ route('admin/mejers') }}" class="menu-link">
+            <a href="{{ route('adminMejers') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-calendar"></i>
                 <div data-i18n="Mejers">Mejers list</div>
             </a>
