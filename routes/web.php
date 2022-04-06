@@ -53,7 +53,11 @@ Route::post('/admin/campenies/upload', [CompeniesController::class, 'upload'])->
 
 
 Route::get('/admin/mejers', [MejersController::class, 'showMajers'])->name('adminMejers');
-Route::get('/admin/services', [ServicesController::class, 'showServices'])->name('adminServices');
+
+// services
+Route::get('/admin/services', [ServicesController::class, 'show'])->name('adminServices');
+Route::get('/admin/services/add', [ServicesController::class, 'add'])->name('adminAddServices');
+Route::post('/admin/services/upload', [ServicesController::class, 'upload'])->name('adminUploadServices');
 
 // skilla
 Route::get('/admin/skills', [SkillsController::class, 'show'])->name('adminSkills');

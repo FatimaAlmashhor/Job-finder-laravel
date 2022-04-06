@@ -24,6 +24,7 @@ class CompeniesController extends Controller
         $comps->description = $request->des ;
         $comps->country = $request->country ;
         $comps->city = $request->city ;
+        
         // todo : upload file 
         $test = $request->file('image') ;
        
