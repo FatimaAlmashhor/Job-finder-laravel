@@ -34,9 +34,9 @@
                                 </div>
 
                                 <!-- <div class="dt-buttons"><button class="dt-button add-new btn btn-primary mb-3 mb-md-0"
-                                                                        tabindex="0" aria-controls="DataTables_Table_0" type="button"
-                                                                        data-bs-toggle="modal" data-bs-target="#addPermissionModal"><span>Add
-                                                                            Book</span></button> </div> -->
+                                                                                                                                tabindex="0" aria-controls="DataTables_Table_0" type="button"
+                                                                                                                                data-bs-toggle="modal" data-bs-target="#addPermissionModal"><span>Add
+                                                                                                                                    Book</span></button> </div> -->
                                 <div class="dt-buttons"><a href='{{ route('adminAddCompeny') }}'
                                         class="dt-button add-new btn btn-primary mb-3 mb-md-0" tabindex="0"
                                         aria-controls="DataTables_Table_0" data-bs-target="#addPermissionModal"><span>Add
@@ -44,15 +44,18 @@
                             </div>
                         </div>
                     </div>
+
                     <table class="datatables-permissions table border-top dataTable no-footer dtr-column"
                         id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info"
                         style="width: 1227px;">
                         <thead>
                             <tr role="row">
-                                <th class="control sorting_disabled" rowspan="1" colspan="1"
-                                    style="width: 68px; display: none;" aria-label="">#</th>
-                                <th class="control sorting_disabled" rowspan="1" colspan="1"
-                                    style="width: 68px; display: none;" aria-label="">ID</th>
+                                <th class="control sorting_disabled" rowspan="1" colspan="1" style="width: 68px; "
+                                    aria-label="">#</th>
+                                <th class="control sorting_disabled" rowspan="1" colspan="1" style="width: 68px; "
+                                    aria-label="">ID</th>
+
+
                                 <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                                     colspan="1" style="width: 168px;" aria-label="Name: activate to sort column ascending">
                                     Icon</th>
@@ -71,26 +74,45 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        {{ $loop->itration }}
+                                        {{ $loop->iteration }}
                                     </td>
                                     <td>
                                         {{ $compeny->id }}
                                     </td>
                                     <td>
-                                        {{ $compeny->image }}
+                                        {{ $compeny->icon }}
                                     </td>
                                     <td>
                                         {{ $compeny->name }}
                                     </td>
+                                    <td><span class="badge bg-label-primary me-1">
+                                            {{ $compeny->is_active ? 'active' : 'nonactive' }}
+                                        </span>
                                     <td>
-                                        {{ $compeny->is_active ? 'Action' : 'Nonactive' }}
+                                        <div class="dropdown">
+                                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
+                                                data-bs-toggle="dropdown"><i
+                                                    class="bx bx-dots-vertical-rounded"></i></button>
+                                            <div class="dropdown-menu">
+                                                <form class="dropdown-item" action="/admin/books/edit" method="post">
+                                                    <button type="submit"><i class="bx bx-edit-alt me-1"></i> Edit</button>
+                                                </form>
+                                                <form class="dropdown-item" action="/admin/books/delete" method="post">
+                                                    <button type="submit"><i class="bx bx-trash me-1"></i> Delete</button>
+                                                </form>
+                                            </div>
+                                        </div>
                                     </td>
-
                                 </tr>
                             </tbody>
                         @endforeach
-                        </tbody>
                     </table>
+
+                    @if (session()->has('message'))
+                        <div class="alert alert-success">
+                            {{ session()->get('message') }}
+                        </div>
+                    @endif
                     <div class="row mx-2">
                         <div class="col-sm-12 col-md-6">
                             <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">

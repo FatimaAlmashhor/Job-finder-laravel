@@ -10,6 +10,7 @@
                 <div class="input-group">
                     <input type="file" class="form-control" name='image' id="inputGroupFile02">
                     <label class="input-group-text" for="inputGroupFile02">Icon </label>
+                    <span class=" text-danger">{{ $errors->first('image') }}</span>
                 </div>
                 <div class="row g-3 mt-3">
                     <div class="col-md-9">

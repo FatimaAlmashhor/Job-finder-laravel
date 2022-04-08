@@ -22,6 +22,7 @@ class CompeniesController extends Controller
     function upload(Request $request){
 
         $validated = $request->validate([
+            'image' => 'required',
             'name' => 'required|max:20',
             'des' => 'required',
             'country' => 'required',
@@ -49,6 +50,6 @@ class CompeniesController extends Controller
         $comps->is_active = empty($request->is_active) ? 0 : 1 ;
         $comps->save();
         
-        return redirect()->route('admin/compenies');
+        return redirect()->route('adminCompenies')->with('message' , 'Compeny added successfully');
     }
 }
