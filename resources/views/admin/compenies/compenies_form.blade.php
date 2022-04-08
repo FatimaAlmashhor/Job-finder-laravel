@@ -11,11 +11,12 @@
                     <input type="file" class="form-control" name='image' id="inputGroupFile02">
                     <label class="input-group-text" for="inputGroupFile02">Icon </label>
                 </div>
-                <div class="row g-3">
+                <div class="row g-3 mt-3">
                     <div class="col-md-9">
                         <label class="form-label" for="multicol-username">name</label>
-                        <input type="text" id="multicol-username" name='name' class="form-control"
-                            placeholder="Software development" />
+                        <input type="text" id="multicol-username" value='{{ old('name') }}' name='name'
+                            class="form-control" placeholder="Software development" />
+                        <span class="text-danger">{{ $errors->first('name') }}</span>
                     </div>
                     <div class="col-md-3 mt-5">
                         <label class="switch">
@@ -28,19 +29,24 @@
                         </label>
                     </div>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-12 mt-3">
                     <label class="form-label" for="multicol-username">About the compeny</label>
-                    <textarea type="text" id="multicol-username" name='des' class="form-control" placeholder="We are ..."></textarea>
+                    <textarea type="text" id="multicol-username" value='{{ old('des') }}' name='des' class="form-control"
+                        placeholder="We are ..."></textarea>
+                    <span class="text-danger">{{ $errors->first('des') }}</span>
                 </div>
-                <div class="row ">
+                <div class="row mt-3">
                     <div class="col-md-6">
                         <label class="form-label" for="multicol-username">country</label>
-                        <input type="text" id="multicol-username" name='country' class="form-control"
-                            placeholder="Yemen" />
+                        <input type="text" id="multicol-username" value='{{ old('country') }}' name='country'
+                            class="form-control" placeholder="Yemen" />
+                        <span class="text-danger">{{ $errors->first('country') }}</span>
                     </div>
                     <div class="col-md-6">
                         <label class="form-label" for="multicol-username">city</label>
-                        <input type="text" id="multicol-username" name='city' class="form-control" placeholder="Taiz" />
+                        <input type="text" id="multicol-username" name='city' value='{{ old('city') }}'
+                            class="form-control" placeholder="Taiz" />
+                        <span class="text-danger">{{ $errors->first('city') }}</span>
                     </div>
                 </div>
                 <div class="pt-4">
