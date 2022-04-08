@@ -4,20 +4,24 @@
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="card mb-4">
             <h5 class="card-header">Add new service</h5>
-            <form class="card-body" method="POST" action="/admin/categories/add" enctype="multipart/form-data">
-                <div class="input-group">
+            <form class="card-body" method="POST" action="{{ route('adminUploadServices') }}"
+                enctype="multipart/form-data">
+                @csrf
+                <div class="input-group mt-3">
                     <input type="file" class="form-control" name='image' id="inputGroupFile02">
                     <label class="input-group-text" for="inputGroupFile02">Upload Image </label>
+                    <span class=" text-danger">{{ $errors->first('image') }}</span>
                 </div>
-                <div class="row g-3">
+                <div class="row g-3 mt-3">
                     <div class="col-md-9">
                         <label class="form-label" for="multicol-username">title</label>
-                        <input type="text" id="multicol-username" name='name' class="form-control"
-                            placeholder="Software development" />
+                        <input type="text" id="multicol-username" value='{{ old('title') }}' name='title'
+                            class="form-control" placeholder="Software development" />
+                        <span class="text-danger">{{ $errors->first('title') }}</span>
                     </div>
                     <div class="col-md-3 mt-5">
                         <label class="switch">
-                            <input type="checkbox" class="switch-input is-valid" checked />
+                            <input type="checkbox" class="switch-input is-valid" name='is_active' value='1' checked />
                             <span class="switch-toggle-slider">
                                 <span class="switch-on"></span>
                                 <span class="switch-off"></span>
@@ -26,9 +30,11 @@
                         </label>
                     </div>
                 </div>
-                <div class="col-md-12">
-                    <label class="form-label" for="multicol-username">About the compeny</label>
-                    <textarea type="text" id="multicol-username" name='des' class="form-control" placeholder="We are ..."></textarea>
+                <div class="col-md-12 mt-3">
+                    <label class="form-label" for="multicol-username">Description</label>
+                    <textarea type="text" id="multicol-username" value='{{ old('des') }}' name='des' class="form-control"
+                        placeholder="We are ..."></textarea>
+                    <span class="text-danger">{{ $errors->first('des') }}</span>
                 </div>
 
                 <div class="pt-4">

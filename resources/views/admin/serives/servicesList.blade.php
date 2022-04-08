@@ -2,6 +2,11 @@
 @section('content')
     <!-- Content -->
     <div class="container-xxl flex-grow-1 container-p-y">
+        @if (session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+        @endif
 
 
         <h4 class="fw-bold py-3 mb-2">services List</h4>
@@ -34,9 +39,9 @@
                                 </div>
 
                                 <!-- <div class="dt-buttons"><button class="dt-button add-new btn btn-primary mb-3 mb-md-0"
-                                                            tabindex="0" aria-controls="DataTables_Table_0" type="button"
-                                                            data-bs-toggle="modal" data-bs-target="#addPermissionModal"><span>Add
-                                                                Book</span></button> </div> -->
+                                                                    tabindex="0" aria-controls="DataTables_Table_0" type="button"
+                                                                    data-bs-toggle="modal" data-bs-target="#addPermissionModal"><span>Add
+                                                                        Book</span></button> </div> -->
                                 <div class="dt-buttons"><a href='{{ route('adminAddServices') }}'
                                         class="dt-button add-new btn btn-primary mb-3 mb-md-0" tabindex="0"
                                         aria-controls="DataTables_Table_0" data-bs-target="#addPermissionModal"><span>Add
