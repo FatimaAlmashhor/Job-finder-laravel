@@ -2,7 +2,11 @@
 @section('content')
     <!-- Content -->
     <div class="container-xxl flex-grow-1 container-p-y">
-
+        @if (session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+        @endif
 
         <h4 class="fw-bold py-3 mb-2">skills List</h4>
 
@@ -34,9 +38,9 @@
                                 </div>
 
                                 <!-- <div class="dt-buttons"><button class="dt-button add-new btn btn-primary mb-3 mb-md-0"
-                                                                                                            tabindex="0" aria-controls="DataTables_Table_0" type="button"
-                                                                                                            data-bs-toggle="modal" data-bs-target="#addPermissionModal"><span>Add
-                                                                                                                Book</span></button> </div> -->
+                                                                                                                            tabindex="0" aria-controls="DataTables_Table_0" type="button"
+                                                                                                                            data-bs-toggle="modal" data-bs-target="#addPermissionModal"><span>Add
+                                                                                                                                Book</span></button> </div> -->
                                 <div class="dt-buttons"><a href='{{ route('adminAddSkill') }}'
                                         class="dt-button add-new btn btn-primary mb-3 mb-md-0" tabindex="0"
                                         aria-controls="DataTables_Table_0" data-bs-target="#addPermissionModal"><span>Add
@@ -104,6 +108,8 @@
 
 
                     </table>
+
+
                     <div class="row mx-2">
                         <div class="col-sm-12 col-md-6">
                             <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">
@@ -123,9 +129,11 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
+
         <!--/ skills Table -->
 
 

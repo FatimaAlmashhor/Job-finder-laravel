@@ -10,8 +10,9 @@
                 <div class="row g-3">
                     <div class="col-md-9">
                         <label class="form-label" for="multicol-username">title</label>
-                        <input type="text" id="multicol-username" name='title' class="form-control"
-                            placeholder="ReactJs" />
+                        <input type="text" id="multicol-username" value='{{ old('title') }}' name='title'
+                            class="form-control" placeholder="ReactJs" />
+                        <span class="text-danger">{{ $errors->first('title') }}</span>
                     </div>
                     <div class="col-md-3 mt-5">
                         <label class="switch">

@@ -20,11 +20,14 @@ class SkillsController extends Controller
         return view('admin.skills.skills_form');
     }
     function upload(Request $request){
+        $validated = $request->validate([
+            'title' => 'required|max:20|unique:skills',
+        ]);
         $skill = new Skills();
         $skill->title = $request->title ;
         $skill->is_active = empty($request->is_active) ? 0 : 1 ;
         $skill->save();
         
-        return redirect()->route('admin/skills');
+        return redirect()->route('adminSkills')->with('message' , 'Skill added successfully');
     }
 }
