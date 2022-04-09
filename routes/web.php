@@ -70,16 +70,13 @@ Route::post('/admin/register', [UsersController::class, 'adminRegister'])->name(
 Route::get('/admin/login', [UsersController::class, 'showAdminLogin'])->name('AdminShowlogin');
 Route::post('/admin/login', [UsersController::class, 'adminLogin'])->name('adminLogin');
 
-// logout
-Route::get('/admin/logout', [UsersController::class, 'adminLogout'])->name('adminLogout');
 
-// setting 
-Route::get('/admin/setting', [settingController::class, 'generateRoles'])->name('generateRoles');
+
 
 
 // roules
 Route::group(['middleware' => 'auth'], function () {
-    Route::group(['middleware' => 'role:client'], function () {
+    Route::group(['middleware' => 'role:admin|super_admin'], function () {
         // admin routing
         Route::get('/admin', [JobsController::class, 'showJobs'])->name('adminJobs');
 
@@ -105,5 +102,12 @@ Route::group(['middleware' => 'auth'], function () {
 
         // users
         Route::get('/admin/users', [UsersController::class, 'showUsers'])->name('adminUsers');
+
+
+        // setting 
+        Route::get('/admin/setting', [settingController::class, 'generateRoles'])->name('generateRoles');
     });
+
+    // logout
+    Route::get('/admin/logout', [UsersController::class, 'adminLogout'])->name('adminLogout');
 });

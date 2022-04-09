@@ -118,4 +118,10 @@ class UsersController extends Controller
             return redirect()->route('adminJobs')->with('message', 'login done sucessfully');
         }
     }
+
+    function adminLogout()
+    {
+        Auth::logout();
+        return redirect()->route('AdminShowlogin');
+    }
 }
