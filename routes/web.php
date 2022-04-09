@@ -5,7 +5,7 @@ use App\Http\Controllers\admin\CompeniesController;
 use App\Http\Controllers\admin\MejersController;
 use App\Http\Controllers\admin\ServicesController;
 use App\Http\Controllers\admin\SkillsController;
-use App\Http\Controllers\admin\UsersController;
+use App\Http\Controllers\UsersController;
 use App\Http\Controllers\client\clientController;
 
 use Illuminate\Support\Facades\Route;
@@ -35,14 +35,29 @@ Route::get('/connectus', [clientController::class, 'showConnectUs'])->name('conn
 Route::get('/jobs', [clientController::class, 'showJobs'])->name('jobs');
 Route::get('/job/details', [clientController::class, 'showJobDetails'])->name('jobdetails');
 
+// login
 Route::get('/login', [clientController::class, 'showLogin'])->name('login');
+Route::post('/login', [UsersController::class, 'clientLogin'])->name('clientLogin');
+
+// register
 Route::get('/register', [clientController::class, 'showRegister'])->name('register');
-Route::get('/profile', [clientController::class, 'showProfile'])->name('profile');
-Route::get('/profile/edit', [clientController::class, 'showEditProfile'])->name('editprofile');
+Route::post('/register', [UsersController::class, 'clientRegister'])->name('clientRegister');
+
+// logout
+Route::get('/logout', [UsersController::class, 'clientLogout'])->name('logout');
+
+
+// profile
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/profile', [clientController::class, 'showProfile'])->name('profile');
+    Route::get('/profile/edit', [clientController::class, 'showEditProfile'])->name('editprofile');
+});
+
 
 Route::get('/compenies', [clientController::class, 'showCompenies'])->name('compenies');
 
 
+// -----------------------------------------------------
 // admin routing
 Route::get('/admin', [JobsController::class, 'showJobs'])->name('adminJobs');
 
@@ -66,4 +81,13 @@ Route::get('/admin/skills', [SkillsController::class, 'show'])->name('adminSkill
 Route::get('/admin/skills/add', [SkillsController::class, 'add'])->name('adminAddSkill');
 Route::post('/admin/skills/upload', [SkillsController::class, 'upload'])->name('adminUpdateSkill');
 
+// users
 Route::get('/admin/users', [UsersController::class, 'showUsers'])->name('adminUsers');
+
+// regisster
+Route::get('/admin/register', [UsersController::class, 'showAdminRegister'])->name('adminShowRegister');
+Route::post('/admin/register', [UsersController::class, 'adminRegister'])->name('adminRegister');
+
+
+Route::get('/admin/login', [UsersController::class, 'showAdminLogin'])->name('AdminShowlogin');
+Route::post('/admin/login', [UsersController::class, 'adminLogin'])->name('adminLogin');

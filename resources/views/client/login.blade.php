@@ -1,6 +1,5 @@
 @extends('layouts.client_master_layout');
 @section('content')
-
     <style>
         body {
             margin-top: 20px;
@@ -82,6 +81,7 @@
                 background-position: 0% 50%
             }
         }
+
     </style>
 
 
@@ -102,18 +102,25 @@
                                         <h6 class="h5 mb-0">Welcome Back!</h6>
                                         <p class="text-muted mt-2 mb-5">Nice to have you here.</p>
 
-                                        <form>
+                                        <form action='{{ route('clientLogin') }}' method="POST">
+                                            @csrf
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Email address</label>
-                                                <input type="email" class="form-control" id="exampleInputEmail1">
+                                                <input type="email" class="form-control" name='email'
+                                                    value='{{ old('email') }}' id="exampleInputEmail1">
+                                                <span class="text-danger">{{ $errors->first('email') }}</span>
                                             </div>
                                             <div class="form-group mb-5">
                                                 <label for="exampleInputPassword1">Password</label>
-                                                <input type='password' class="form-control" id="exampleInputPassword1">
+                                                <input type='password' name='password' value='{{ old('password') }}'
+                                                    class="form-control" id="exampleInputPassword1">
+                                                <span class="text-danger">{{ $errors->first('password') }}</span>
                                             </div>
                                             <p>You do not have acount ? <span><a
-                                                        href="{{route('register')}}">register</a></span></p>
-                                            <a href="{{route('profile')}}" type="submit" class="btn btn-theme">Login</a>
+                                                        href="{{ route('register') }}">register</a></span></p>
+                                            {{-- <a href="{{ route('profile') }}" type="submit"
+                                                class="btn btn-theme">Login</a> --}}
+                                            <button type="submit" class="btn btn-theme">Login</button>
                                         </form>
                                     </div>
                                 </div>
@@ -143,15 +150,15 @@
                                             <p>- Admin User</p>
                                             <div class="col-6 mx-auto my-3">
                                                 <div class="row mx-auto d-flex flex-wrap ">
-                                                    <div
-                                                        class="col-4 d-flex flex-row justify-content-around align pointer">
-                                                        <i class="bi bi-twitter"></i> </div>
-                                                    <div
-                                                        class="col-4 d-flex flex-row justify-content-around align pointer">
-                                                        <i class="bi bi-facebook"></i> </div>
-                                                    <div
-                                                        class="col-4 d-flex flex-row justify-content-around align pointer">
-                                                        <i class="bi bi-google"></i> </div>
+                                                    <div class="col-4 d-flex flex-row justify-content-around align pointer">
+                                                        <i class="bi bi-twitter"></i>
+                                                    </div>
+                                                    <div class="col-4 d-flex flex-row justify-content-around align pointer">
+                                                        <i class="bi bi-facebook"></i>
+                                                    </div>
+                                                    <div class="col-4 d-flex flex-row justify-content-around align pointer">
+                                                        <i class="bi bi-google"></i>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

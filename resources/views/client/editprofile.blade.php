@@ -16,15 +16,14 @@
                                 <div>
                                     <div class="bg-purple-primary w-100">
                                         <div class=" container px-4 pt-0 pb-4 cover">
-                                            <a href='{{route('home')}}'>
+                                            <a href='{{ route('home') }}'>
                                                 <i class="bi bi-arrow-left-short text-white" style="font-size: 2rem;"></i>
                                             </a>
                                             <div class="media  d-flex flex-row align-items-end profile-head">
                                                 <div class="profile  avatar  d-flex flex-column">
                                                     <span data-bs-target="#add_image_modal" data-bs-toggle="modal"
                                                         class="avatar_icon " id="">
-                                                        <i class="bi bi-box-arrow-in-down-left"
-                                                            style="color : white"></i>
+                                                        <i class="bi bi-box-arrow-in-down-left" style="color : white"></i>
                                                     </span>
                                                     <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
                                                         alt="..." width="130" class="rounded mb-2 img-thumbnail"><a
@@ -94,15 +93,16 @@
                                                         </li>
                                                         <li
                                                             class=" dashboard-side list-group-item py-2 d-flex justify-content-between pointer">
-                                                            <a class="text-black" href="{{route('home')}}">Home</a>
+                                                            <a class="text-black" href="{{ route('home') }}">Home</a>
                                                             <!-- <strong>$20</strong> -->
                                                         </li>
-                                                        <li
-                                                            class=" dashboard-side list-group-item py-2 d-flex justify-content-between pointer">
-                                                            <span>Login Out</span>
-                                                            <!-- <strong>$20</strong> -->
-                                                        </li>
-                                                        
+                                                        <a href='{{ route('logout') }}'>
+                                                            <li
+                                                                class=" dashboard-side list-group-item py-2 d-flex justify-content-between pointer">
+                                                                <span>Login Out</span>
+                                                                <!-- <strong>$20</strong> -->
+                                                        </a></li>
+
                                                     </ul>
                                                 </div>
                                             </div>
@@ -410,7 +410,8 @@
                                             <div class="row g-2  py-3">
                                                 <div
                                                     class="col-2   text-white text-center p-1 d-flex align-items-center justify-content-center rounded">
-                                                    <div class="icon"> <i class="bi bi-reddit text-black"></i> </div>
+                                                    <div class="icon"> <i class="bi bi-reddit text-black"></i>
+                                                    </div>
                                                 </div>
                                                 <div class="col-10 px-3">
                                                     <h5>Software Developer</h5>
@@ -450,7 +451,8 @@
                                             <div class="row g-2  py-3">
                                                 <div
                                                     class="col-2   text-white text-center p-1 d-flex align-items-center justify-content-center rounded">
-                                                    <div class="icon"> <i class="bi bi-google text-black"></i> </div>
+                                                    <div class="icon"> <i class="bi bi-google text-black"></i>
+                                                    </div>
                                                 </div>
                                                 <div class="col-10 px-3">
                                                     <h5>Software Developer</h5>
@@ -757,7 +759,7 @@
             </div>
         </div>
     </div>
-   
+
     <script src="./js/dashboard.js"></script>
     <script src="./js/modal.js"></script>
-    @endsection
+@endsection
