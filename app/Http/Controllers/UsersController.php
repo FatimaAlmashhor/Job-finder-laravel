@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -15,7 +15,8 @@ class UsersController extends Controller
     {
         return view('admin.users.usersList');
     }
-    function clientRegister(Request $request)
+
+    function createRegister($request, $user)
     {
         /* // TODO: 
          * get the data
@@ -23,7 +24,7 @@ class UsersController extends Controller
          * seve the data to the DB 
          * get the route 
          * */
-        $user  = new User();
+
         $validated = $request->validate([
             'fullname' => 'required|max:20',
             'email' => 'required|email|unique:users',
@@ -33,6 +34,13 @@ class UsersController extends Controller
         $user->name = $request->fullname;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
+    }
+
+    // for client
+    function clientRegister(Request $request)
+    {
+        $user  = new User();
+        $this->createRegister($request, $user);
 
         if ($user->save()) {
             echo "I am inside the consition";
@@ -57,5 +65,37 @@ class UsersController extends Controller
     {
         Auth::logout();
         return redirect()->route('home')->with('message', 'Logout done sucessfully');
+    }
+
+
+    // admin
+    function showAdminRegister()
+    {
+        return view('admin.users.register_form');
+    }
+
+
+    // for register
+    function adminRegister(Request $request)
+    {
+        $user  = new User();
+        $this->createRegister($request, $user);
+
+        if ($user->save()) {
+            echo "I am inside the consition";
+            $user->attachRole('admin');
+            // return redirect()->route('AdminShowlogin')->with('message', 'register done sucessfully');
+        }
+    }
+
+
+    // for login
+    function showAdminLogin()
+    {
+        return view('admin.users.login_form');
+    }
+
+    function adminLogin()
+    {
     }
 }

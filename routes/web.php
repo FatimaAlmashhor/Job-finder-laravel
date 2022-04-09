@@ -5,7 +5,7 @@ use App\Http\Controllers\admin\CompeniesController;
 use App\Http\Controllers\admin\MejersController;
 use App\Http\Controllers\admin\ServicesController;
 use App\Http\Controllers\admin\SkillsController;
-use App\Http\Controllers\admin\UsersController;
+use App\Http\Controllers\UsersController;
 use App\Http\Controllers\client\clientController;
 
 use Illuminate\Support\Facades\Route;
@@ -81,4 +81,13 @@ Route::get('/admin/skills', [SkillsController::class, 'show'])->name('adminSkill
 Route::get('/admin/skills/add', [SkillsController::class, 'add'])->name('adminAddSkill');
 Route::post('/admin/skills/upload', [SkillsController::class, 'upload'])->name('adminUpdateSkill');
 
+// users
 Route::get('/admin/users', [UsersController::class, 'showUsers'])->name('adminUsers');
+
+// regisster
+Route::get('/admin/register', [UsersController::class, 'showAdminRegister'])->name('adminShowRegister');
+Route::post('/admin/register', [UsersController::class, 'adminRegister'])->name('adminRegister');
+
+
+Route::get('/admin/login', [UsersController::class, 'showAdminLogin'])->name('AdminShowlogin');
+Route::post('/admin/login', [UsersController::class, 'adminLogin'])->name('adminLogin');
