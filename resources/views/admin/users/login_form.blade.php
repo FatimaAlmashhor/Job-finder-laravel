@@ -202,7 +202,7 @@
                             </div>
 
                             <button type='submit' class="btn btn-primary d-grid w-100">
-                                Sign up
+                                Login
                             </button>
                         </form>
 

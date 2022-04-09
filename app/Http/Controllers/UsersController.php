@@ -16,7 +16,13 @@ class UsersController extends Controller
         return view('admin.users.usersList');
     }
 
-
+    public function checkRole()
+    {
+        if (Auth::user()->hasRole('admin'))
+            return 'adminJobs';
+        else
+            return 'home';
+    }
 
     // for client
     function clientRegister(Request $request)
@@ -68,7 +74,10 @@ class UsersController extends Controller
     // admin
     function showAdminRegister()
     {
-        return view('admin.users.register_form');
+        if (Auth::check())
+            return redirect()->route($this->checkRole());
+        else
+            return view('admin.users.register_form');
     }
 
 
@@ -104,7 +113,10 @@ class UsersController extends Controller
     // for login
     function showAdminLogin()
     {
-        return view('admin.users.login_form');
+        if (Auth::check())
+            return redirect()->route($this->checkRole());
+        else
+            return view('admin.users.login_form');
     }
 
     function adminLogin(Request $request)
