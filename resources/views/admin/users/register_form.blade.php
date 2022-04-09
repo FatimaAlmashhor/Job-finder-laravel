@@ -185,9 +185,9 @@
                             @csrf
                             <div class="mb-3">
                                 <label for="username" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="username" name="name"
-                                    value='{{ old('name') }}' placeholder="Enter your username" autofocus>
-                                <span class="text-danger">{{ $errors->first('name') }}</span>
+                                <input type="text" class="form-control" id="username" name="fullname"
+                                    value='{{ old('fullname') }}' placeholder="Enter your username" autofocus>
+                                <span class="text-danger">{{ $errors->first('fullname') }}</span>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>

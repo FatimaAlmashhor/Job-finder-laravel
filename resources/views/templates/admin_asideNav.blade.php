@@ -124,6 +124,12 @@
                 <div data-i18n="Mejers">Mejers list</div>
             </a>
         </li>
+        <li class="menu-item">
+            <a href="{{ route('adminLogout') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-calendar"></i>
+                <div data-i18n="Logout">Logout</div>
+            </a>
+        </li>
 
     </ul>
 
