@@ -4,17 +4,19 @@
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="card mb-4">
             <h5 class="card-header">Add new majer</h5>
-            <form class="card-body" method="POST" action="/admin/categories/add" enctype="multipart/form-data">
-
+            <form class="card-body" method="POST" action="{{ route('adminUploadMejer') }}"
+                enctype="multipart/form-data">
+                @csrf
                 <div class="row g-3">
                     <div class="col-md-9">
                         <label class="form-label" for="multicol-username">title</label>
-                        <input type="text" id="multicol-username" name='title' class="form-control"
-                            placeholder="Software development" />
+                        <input type="text" id="multicol-username" value='{{ old('title') }}' name='title'
+                            class="form-control" placeholder="Software development" />
+                        <span class="text-danger">{{ $errors->first('title') }}</span>
                     </div>
                     <div class="col-md-3 mt-5">
                         <label class="switch">
-                            <input type="checkbox" class="switch-input is-valid" checked />
+                            <input type="checkbox" class="switch-input is-valid" name='is_active' value='1' checked />
                             <span class="switch-toggle-slider">
                                 <span class="switch-on"></span>
                                 <span class="switch-off"></span>

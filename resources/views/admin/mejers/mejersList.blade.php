@@ -2,7 +2,11 @@
 @section('content')
     <!-- Content -->
     <div class="container-xxl flex-grow-1 container-p-y">
-
+        @if (session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+        @endif
 
         <h4 class="fw-bold py-3 mb-2">mejers List</h4>
 
@@ -34,10 +38,10 @@
                                 </div>
 
                                 <!-- <div class="dt-buttons"><button class="dt-button add-new btn btn-primary mb-3 mb-md-0"
-                                                tabindex="0" aria-controls="DataTables_Table_0" type="button"
-                                                data-bs-toggle="modal" data-bs-target="#addPermissionModal"><span>Add
-                                                    Book</span></button> </div> -->
-                                <div class="dt-buttons"><a href='/admin/books/add'
+                                                            tabindex="0" aria-controls="DataTables_Table_0" type="button"
+                                                            data-bs-toggle="modal" data-bs-target="#addPermissionModal"><span>Add
+                                                                Book</span></button> </div> -->
+                                <div class="dt-buttons"><a href='{{ route('adminAddMejer') }}'
                                         class="dt-button add-new btn btn-primary mb-3 mb-md-0" tabindex="0"
                                         aria-controls="DataTables_Table_0" data-bs-target="#addPermissionModal"><span>Add
                                             mejer</span></a> </div>
@@ -65,8 +69,37 @@
                                     aria-label="Actions">Actions</th>
                             </tr>
                         </thead>
-
-                        </tr>
+                        @foreach ($mejers as $mejer)
+                            <tbody>
+                                <tr>
+                                    <td> <strong>
+                                            {{ $loop->iteration }}</strong></td>
+                                    <td>{{ $mejer->id }}</td>
+                                    <td>
+                                        {{ $mejer->title }}
+                                    </td>
+                                    <td><span class="badge bg-label-primary me-1">
+                                            {{ $mejer->is_active ? 'active' : 'nonactive' }}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
+                                                data-bs-toggle="dropdown"><i
+                                                    class="bx bx-dots-vertical-rounded"></i></button>
+                                            <div class="dropdown-menu">
+                                                <form class="dropdown-item" action="/admin/books/edit" method="post">
+                                                    <button type="submit"><i class="bx bx-edit-alt me-1"></i> Edit</button>
+                                                </form>
+                                                <form class="dropdown-item" action="/admin/books/delete" method="post">
+                                                    <button type="submit"><i class="bx bx-trash me-1"></i> Delete</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        @endforeach
                         </tbody>
                     </table>
                     <div class="row mx-2">

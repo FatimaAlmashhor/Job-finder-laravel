@@ -52,7 +52,9 @@ Route::get('/admin/campenies/add', [CompeniesController::class, 'add'])->name('a
 Route::post('/admin/campenies/upload', [CompeniesController::class, 'upload'])->name('adminUploadCompeny');
 
 
-Route::get('/admin/mejers', [MejersController::class, 'showMajers'])->name('adminMejers');
+Route::get('/admin/mejers', [MejersController::class, 'show'])->name('adminMejers');
+Route::get('/admin/mejers/add', [MejersController::class, 'add'])->name('adminAddMejer');
+Route::post('/admin/mejers/upload', [MejersController::class, 'upload'])->name('adminUploadMejer');
 
 // services
 Route::get('/admin/services', [ServicesController::class, 'show'])->name('adminServices');
