@@ -7,7 +7,7 @@ use App\Http\Controllers\admin\ServicesController;
 use App\Http\Controllers\admin\SkillsController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\client\clientController;
-
+use App\Http\Controllers\settingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -49,8 +49,10 @@ Route::get('/logout', [UsersController::class, 'clientLogout'])->name('logout');
 
 // profile
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/profile', [clientController::class, 'showProfile'])->name('profile');
-    Route::get('/profile/edit', [clientController::class, 'showEditProfile'])->name('editprofile');
+    Route::group(['middleware' => 'role:client'], function () {
+        Route::get('/profile', [clientController::class, 'showProfile'])->name('profile');
+        Route::get('/profile/edit', [clientController::class, 'showEditProfile'])->name('editprofile');
+    });
 });
 
 
@@ -58,31 +60,7 @@ Route::get('/compenies', [clientController::class, 'showCompenies'])->name('comp
 
 
 // -----------------------------------------------------
-// admin routing
-Route::get('/admin', [JobsController::class, 'showJobs'])->name('adminJobs');
 
-// compenies
-Route::get('/admin/campenies', [CompeniesController::class, 'show'])->name('adminCompenies');
-Route::get('/admin/campenies/add', [CompeniesController::class, 'add'])->name('adminAddCompeny');
-Route::post('/admin/campenies/upload', [CompeniesController::class, 'upload'])->name('adminUploadCompeny');
-
-
-Route::get('/admin/mejers', [MejersController::class, 'show'])->name('adminMejers');
-Route::get('/admin/mejers/add', [MejersController::class, 'add'])->name('adminAddMejer');
-Route::post('/admin/mejers/upload', [MejersController::class, 'upload'])->name('adminUploadMejer');
-
-// services
-Route::get('/admin/services', [ServicesController::class, 'show'])->name('adminServices');
-Route::get('/admin/services/add', [ServicesController::class, 'add'])->name('adminAddServices');
-Route::post('/admin/services/upload', [ServicesController::class, 'upload'])->name('adminUploadServices');
-
-// skilla
-Route::get('/admin/skills', [SkillsController::class, 'show'])->name('adminSkills');
-Route::get('/admin/skills/add', [SkillsController::class, 'add'])->name('adminAddSkill');
-Route::post('/admin/skills/upload', [SkillsController::class, 'upload'])->name('adminUpdateSkill');
-
-// users
-Route::get('/admin/users', [UsersController::class, 'showUsers'])->name('adminUsers');
 
 // regisster
 Route::get('/admin/register', [UsersController::class, 'showAdminRegister'])->name('adminShowRegister');
@@ -91,3 +69,41 @@ Route::post('/admin/register', [UsersController::class, 'adminRegister'])->name(
 
 Route::get('/admin/login', [UsersController::class, 'showAdminLogin'])->name('AdminShowlogin');
 Route::post('/admin/login', [UsersController::class, 'adminLogin'])->name('adminLogin');
+
+// logout
+Route::get('/admin/logout', [UsersController::class, 'adminLogout'])->name('adminLogout');
+
+// setting 
+Route::get('/admin/setting', [settingController::class, 'generateRoles'])->name('generateRoles');
+
+
+// roules
+Route::group(['middleware' => 'auth'], function () {
+    Route::group(['middleware' => 'role:client'], function () {
+        // admin routing
+        Route::get('/admin', [JobsController::class, 'showJobs'])->name('adminJobs');
+
+        // compenies
+        Route::get('/admin/campenies', [CompeniesController::class, 'show'])->name('adminCompenies');
+        Route::get('/admin/campenies/add', [CompeniesController::class, 'add'])->name('adminAddCompeny');
+        Route::post('/admin/campenies/upload', [CompeniesController::class, 'upload'])->name('adminUploadCompeny');
+
+
+        Route::get('/admin/mejers', [MejersController::class, 'show'])->name('adminMejers');
+        Route::get('/admin/mejers/add', [MejersController::class, 'add'])->name('adminAddMejer');
+        Route::post('/admin/mejers/upload', [MejersController::class, 'upload'])->name('adminUploadMejer');
+
+        // services
+        Route::get('/admin/services', [ServicesController::class, 'show'])->name('adminServices');
+        Route::get('/admin/services/add', [ServicesController::class, 'add'])->name('adminAddServices');
+        Route::post('/admin/services/upload', [ServicesController::class, 'upload'])->name('adminUploadServices');
+
+        // skilla
+        Route::get('/admin/skills', [SkillsController::class, 'show'])->name('adminSkills');
+        Route::get('/admin/skills/add', [SkillsController::class, 'add'])->name('adminAddSkill');
+        Route::post('/admin/skills/upload', [SkillsController::class, 'upload'])->name('adminUpdateSkill');
+
+        // users
+        Route::get('/admin/users', [UsersController::class, 'showUsers'])->name('adminUsers');
+    });
+});
