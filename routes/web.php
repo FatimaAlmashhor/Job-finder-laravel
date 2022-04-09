@@ -43,8 +43,16 @@ Route::post('/login', [UsersController::class, 'clientLogin'])->name('clientLogi
 Route::get('/register', [clientController::class, 'showRegister'])->name('register');
 Route::post('/register', [UsersController::class, 'clientRegister'])->name('clientRegister');
 
-Route::get('/profile', [clientController::class, 'showProfile'])->name('profile');
-Route::get('/profile/edit', [clientController::class, 'showEditProfile'])->name('editprofile');
+// logout
+Route::get('/logout', [UsersController::class, 'clientLogout'])->name('logout');
+
+
+// profile
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/profile', [clientController::class, 'showProfile'])->name('profile');
+    Route::get('/profile/edit', [clientController::class, 'showEditProfile'])->name('editprofile');
+});
+
 
 Route::get('/compenies', [clientController::class, 'showCompenies'])->name('compenies');
 

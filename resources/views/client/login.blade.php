@@ -103,18 +103,24 @@
                                         <p class="text-muted mt-2 mb-5">Nice to have you here.</p>
 
                                         <form action='{{ route('clientLogin') }}' method="POST">
+                                            @csrf
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Email address</label>
-                                                <input type="email" class="form-control" id="exampleInputEmail1">
+                                                <input type="email" class="form-control" name='email'
+                                                    value='{{ old('email') }}' id="exampleInputEmail1">
+                                                <span class="text-danger">{{ $errors->first('email') }}</span>
                                             </div>
                                             <div class="form-group mb-5">
                                                 <label for="exampleInputPassword1">Password</label>
-                                                <input type='password' class="form-control" id="exampleInputPassword1">
+                                                <input type='password' name='password' value='{{ old('password') }}'
+                                                    class="form-control" id="exampleInputPassword1">
+                                                <span class="text-danger">{{ $errors->first('password') }}</span>
                                             </div>
                                             <p>You do not have acount ? <span><a
                                                         href="{{ route('register') }}">register</a></span></p>
-                                            <a href="{{ route('profile') }}" type="submit"
-                                                class="btn btn-theme">Login</a>
+                                            {{-- <a href="{{ route('profile') }}" type="submit"
+                                                class="btn btn-theme">Login</a> --}}
+                                            <button type="submit" class="btn btn-theme">Login</button>
                                         </form>
                                     </div>
                                 </div>
