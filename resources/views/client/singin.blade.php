@@ -1,6 +1,5 @@
 @extends('layouts.client_master_layout');
 @section('content')
-
     <style>
         body {
             margin-top: 20px;
@@ -61,7 +60,7 @@
             /* justify-content: center; */
             background-size: 300% 300%;
             background-image: linear-gradient(45deg,
-            rgb(70, 181, 233) 0%,
+                    rgb(70, 181, 233) 0%,
                     rgb(70, 181, 233) 10%,
                     rgb(69, 92, 207) 45%,
                     rgb(47, 66, 161) 71%,
@@ -82,6 +81,7 @@
                 background-position: 0% 50%
             }
         }
+
     </style>
 
 
@@ -102,25 +102,37 @@
                                         <h6 class="h5 mb-0">Welcome !</h6>
                                         <p class="text-muted mt-2 mb-5">Nice to have you here.</p>
 
-                                        <form>
+                                        <form action="{{ route('clientRegister') }}" method="POST">
+                                            @csrf
                                             <div class="form-group my-2">
                                                 <label for="exampleInputEmail1">Full Name</label>
-                                                <input type="email" class="form-control" id="exampleInputEmail1">
+                                                <input type="text" name='fullname' value='{{ old('fullname') }}'
+                                                    class="form-control" id="exampleInputEmail1">
+                                                <span class="text-danger">{{ $errors->first('fullname') }}</span>
                                             </div>
                                             <div class="form-group my-2">
                                                 <label for="exampleInputEmail1">Email address</label>
-                                                <input type="email" class="form-control" id="exampleInputEmail1">
+                                                <input type="email" name='email' value='{{ old('email') }}'
+                                                    class="form-control" id="exampleInputEmail1">
+                                                <span class="text-danger">{{ $errors->first('email') }}</span>
                                             </div>
                                             <div class="form-group  my-2">
                                                 <label for="exampleInputPassword1">Password</label>
-                                                <input type='password' class="form-control" id="exampleInputPassword1">
+                                                <input type='password' name='password' value='{{ old('password') }}'
+                                                    class="form-control" id="exampleInputPassword1">
+                                                <span class="text-danger">{{ $errors->first('password') }}</span>
                                             </div>
                                             <div class="form-group mb-5 my-2">
                                                 <label for="exampleInputPassword1">Confirm your Password</label>
-                                                <input type='password' class="form-control" id="exampleInputPassword1">
+                                                <input type='password' name='cpassword' value='{{ old('cpassword') }}'
+                                                    class="form-control" id="exampleInputPassword1">
+                                                <span class="text-danger">{{ $errors->first('cpassword') }}</span>
                                             </div>
-                                            <p>You have account ? <span><a href="{{route('login')}}">Login</a></span></p>
-                                            <a href='{{route('profile')}}' type="submit" class="btn btn-theme">Register</a>
+                                            <p>You have account ? <span><a href="{{ route('login') }}">Login</a></span>
+                                            </p>
+                                            {{-- <a href='{{ route('profile') }}' type="submit"
+                                                class="btn btn-theme">Register</a> --}}
+                                            <button type="submit" class="btn btn-theme">Register</button>
                                         </form>
                                     </div>
                                 </div>
@@ -150,15 +162,15 @@
                                             <p>- Admin User</p>
                                             <div class="col-6 mx-auto my-3">
                                                 <div class="row mx-auto d-flex flex-wrap ">
-                                                    <div
-                                                        class="col-4 d-flex flex-row justify-content-around align pointer">
-                                                        <i class="bi bi-twitter"></i> </div>
-                                                    <div
-                                                        class="col-4 d-flex flex-row justify-content-around align pointer">
-                                                        <i class="bi bi-facebook"></i> </div>
-                                                    <div
-                                                        class="col-4 d-flex flex-row justify-content-around align pointer">
-                                                        <i class="bi bi-google"></i> </div>
+                                                    <div class="col-4 d-flex flex-row justify-content-around align pointer">
+                                                        <i class="bi bi-twitter"></i>
+                                                    </div>
+                                                    <div class="col-4 d-flex flex-row justify-content-around align pointer">
+                                                        <i class="bi bi-facebook"></i>
+                                                    </div>
+                                                    <div class="col-4 d-flex flex-row justify-content-around align pointer">
+                                                        <i class="bi bi-google"></i>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -180,4 +192,4 @@
             <!-- Row -->
         </div>
     </main>
-    @endsection
+@endsection

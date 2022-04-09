@@ -35,14 +35,21 @@ Route::get('/connectus', [clientController::class, 'showConnectUs'])->name('conn
 Route::get('/jobs', [clientController::class, 'showJobs'])->name('jobs');
 Route::get('/job/details', [clientController::class, 'showJobDetails'])->name('jobdetails');
 
+// login
 Route::get('/login', [clientController::class, 'showLogin'])->name('login');
+Route::post('/login', [UsersController::class, 'clientLogin'])->name('clientLogin');
+
+// register
 Route::get('/register', [clientController::class, 'showRegister'])->name('register');
+Route::post('/register', [UsersController::class, 'clientRegister'])->name('clientRegister');
+
 Route::get('/profile', [clientController::class, 'showProfile'])->name('profile');
 Route::get('/profile/edit', [clientController::class, 'showEditProfile'])->name('editprofile');
 
 Route::get('/compenies', [clientController::class, 'showCompenies'])->name('compenies');
 
 
+// -----------------------------------------------------
 // admin routing
 Route::get('/admin', [JobsController::class, 'showJobs'])->name('adminJobs');
 
