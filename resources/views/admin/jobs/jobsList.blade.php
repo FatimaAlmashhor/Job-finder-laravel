@@ -3,6 +3,11 @@
     <!-- Content -->
     <div class="container-xxl flex-grow-1 container-p-y">
 
+        @if (session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+        @endif
 
         <h4 class="fw-bold py-3 mb-2">Jobs List</h4>
 
@@ -34,41 +39,80 @@
                                 </div>
 
                                 <!-- <div class="dt-buttons"><button class="dt-button add-new btn btn-primary mb-3 mb-md-0"
-                                                        tabindex="0" aria-controls="DataTables_Table_0" type="button"
-                                                        data-bs-toggle="modal" data-bs-target="#addPermissionModal"><span>Add
-                                                            Book</span></button> </div> -->
-                                <div class="dt-buttons"><a href='{{ route('adminAddjob') }}'
+                                                                                                                                                    tabindex="0" aria-controls="DataTables_Table_0" type="button"
+                                                                                                                                                    data-bs-toggle="modal" data-bs-target="#addPermissionModal"><span>Add
+                                                                                                                                                        Book</span></button> </div> -->
+                                <div class="dt-buttons"><a href='{{ route('adminAddCompeny') }}'
                                         class="dt-button add-new btn btn-primary mb-3 mb-md-0" tabindex="0"
                                         aria-controls="DataTables_Table_0" data-bs-target="#addPermissionModal"><span>Add
-                                            job</span></a> </div>
+                                            compeny</span></a> </div>
                             </div>
                         </div>
                     </div>
+
                     <table class="datatables-permissions table border-top dataTable no-footer dtr-column"
                         id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info"
                         style="width: 1227px;">
                         <thead>
                             <tr role="row">
-                                <th class="control sorting_disabled" rowspan="1" colspan="1"
-                                    style="width: 68px; display: none;" aria-label=""></th>
+                                <th class="control sorting_disabled" rowspan="1" colspan="1" style="width: 68px; "
+                                    aria-label="">#</th>
+                                <th class="control sorting_disabled" rowspan="1" colspan="1" style="width: 68px; "
+                                    aria-label="">ID</th>
+
+
                                 <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                                     colspan="1" style="width: 168px;" aria-label="Name: activate to sort column ascending">
-                                    Image</th>
+                                    Title</th>
                                 <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                                     colspan="1" style="width: 168px;" aria-label="Name: activate to sort column ascending">
-                                    Name</th>
+                                    Compeny</th>
                                 <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 280px;"
-                                    aria-label="Assigned To">Assigned To</th>
-                                <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 300px;"
-                                    aria-label="Created Date">Created Date</th>
+                                    aria-label="Assigned To">Activation</th>
+
                                 <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 197px;"
                                     aria-label="Actions">Actions</th>
                             </tr>
                         </thead>
 
-                        </tr>
-                        </tbody>
+                        @foreach ($jobs as $job)
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        {{ $loop->iteration }}
+                                    </td>
+                                    <td>
+                                        {{ $job->id }}
+                                    </td>
+                                    <td>
+                                        {{ $job->title }}
+                                    </td>
+                                    <td>
+                                        {{ $job->name }}
+                                    </td>
+                                    <td><span class="badge bg-label-primary me-1">
+                                            {{ $job->is_active ? 'active' : 'nonactive' }}
+                                        </span>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
+                                                data-bs-toggle="dropdown"><i
+                                                    class="bx bx-dots-vertical-rounded"></i></button>
+                                            <div class="dropdown-menu">
+                                                <form class="dropdown-item" action="/admin/books/edit" method="post">
+                                                    <button type="submit"><i class="bx bx-edit-alt me-1"></i> Edit</button>
+                                                </form>
+                                                <form class="dropdown-item" action="/admin/books/delete" method="post">
+                                                    <button type="submit"><i class="bx bx-trash me-1"></i> Delete</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        @endforeach
                     </table>
+
                     <div class="row mx-2">
                         <div class="col-sm-12 col-md-6">
                             <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">
@@ -103,7 +147,7 @@
                         <button type="button" class="btn-close btn-pinned" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                         <div class="text-center mb-4">
-                            <h3>Add New job</h3>
+                            <h3>Add New compeny</h3>
                             <p>Permissions you may use and assign to your users.</p>
                         </div>
                         <form id="addPermissionForm" class="row fv-plugins-bootstrap5 fv-plugins-framework"

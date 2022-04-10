@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="col-md-12 mt-3">
-                    <label class="form-label" for="multicol-username">About the compeny</label>
+                    <label class="form-label" for="multicol-username">About the job</label>
                     <textarea type="text" id="multicol-username" value='{{ old('des') }}' name='des' class="form-control"
                         placeholder="We are ..."></textarea>
                     <span class="text-danger">{{ $errors->first('des') }}</span>
@@ -50,15 +50,17 @@
                         <label for="select2Basic" class="form-label">Compeny</label>
                         <select id="select2Basic" name='compeny' class="select2 form-select form-select-lg"
                             data-allow-clear="true">
-                            <option value="AK">Alaska</option>
+                            @foreach ($compenies as $compeny)
+                                <option value="{{ $compeny->id }}">{{ $compeny->name }}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="col-md-6 mb-4">
                         <label for="select2Basic" class="form-label">job type</label>
                         <select id="select2Basic" name='jobType' class="select2 form-select form-select-lg"
                             data-allow-clear="true">
-                            @foreach ($compenies as $compeny)
-                                <option value="AK">{{ $compeny->name }}</option>
+                            @foreach ($jobTypes as $jobType)
+                                <option value="{{ $jobType->id }}">{{ $jobType->title }}</option>
                             @endforeach
                         </select>
                     </div>

@@ -18,16 +18,17 @@ return new class extends Migration
             $table->string('title');
             $table->string('location');
             $table->string('sallary');
+            $table->string('description');
             $table->boolean('is_active')->default(1);
             $table->timestamps();
             $table->timestamp('end_date')->useCurrent();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('compeny_id')->nullable();
-            $table->unsignedBigInteger('job_type_id')->nullable();
+            $table->unsignedBigInteger('job_types_id')->nullable();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('compeny_id')->references('id')->on('compenies')->onDelete('cascade');
-            $table->foreign('job_type_id')->references('id')->on('job_type')->onDelete('cascade');
+            $table->foreign('job_types_id')->references('id')->on('job_types')->onDelete('cascade');
             $table->softDeletes();
         });
     }

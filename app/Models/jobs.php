@@ -9,5 +9,7 @@ class jobs extends Model
 {
     use HasFactory;
 
-
+    // function compenies(){
+    //     return $this->hasOne()
+    // }
 }

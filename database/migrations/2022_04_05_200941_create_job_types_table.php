@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('job_type', function (Blueprint $table) {
+        Schema::create('job_types', function (Blueprint $table) {
             $table->id();
             $table->string('title')->unique();
             $table->boolean('is_active')->default(1);

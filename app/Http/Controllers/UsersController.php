@@ -128,6 +128,8 @@ class UsersController extends Controller
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             return redirect()->route('adminJobs')->with('message', 'login done sucessfully');
+        } else {
+            return redirect()->route('AdminShowlogin')->with('message', 'user do not exits');
         }
     }
 

@@ -72,7 +72,7 @@ Route::group(['middleware' => 'auth'], function () {
             Route::prefix('jobs')->controller(JobsController::class)->group(function () {
                 Route::get('/',  'show')->name('adminJobs');
                 Route::get('/add',  'add')->name('adminAddjob');
-                Route::get('/upload',  'upload')->name('adminUploadJob');
+                Route::post('/upload',  'upload')->name('adminUploadJob');
             });
 
             // compenies
@@ -105,10 +105,6 @@ Route::group(['middleware' => 'auth'], function () {
 
             // users
             Route::get('/users', [UsersController::class, 'showUsers'])->name('adminUsers');
-
-
-            // setting 
-            Route::get('/admin/setting', [settingController::class, 'generateRoles'])->name('generateRoles');
         });
     });
 });
@@ -130,3 +126,7 @@ Route::post('/admin/login', [UsersController::class, 'adminLogin'])->name('admin
 
 // logout
 Route::get('/admin/logout', [UsersController::class, 'adminLogout'])->name('adminLogout');
+
+
+// setting 
+Route::get('/setting', [settingController::class, 'generateRoles'])->name('generateRoles');
