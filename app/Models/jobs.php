@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class jobs extends Model
 {
     use HasFactory;
+
+
 }

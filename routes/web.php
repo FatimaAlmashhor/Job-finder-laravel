@@ -64,7 +64,16 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(['middleware' => 'role:admin|super_admin'], function () {
         // admin routing
         Route::prefix('admin')->group(function () {
-            Route::get('/', [JobsController::class, 'showJobs'])->name('adminJobs');
+
+            // dashboard
+            Route::view('/',  'admin.dashboard')->name('dashboard');
+
+            // jobs
+            Route::prefix('jobs')->controller(JobsController::class)->group(function () {
+                Route::get('/',  'show')->name('adminJobs');
+                Route::get('/add',  'add')->name('adminAddjob');
+                Route::get('/upload',  'upload')->name('adminUploadJob');
+            });
 
             // compenies
             Route::prefix('compenies')->controller(CompeniesController::class)->group(function () {
