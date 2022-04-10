@@ -39,9 +39,9 @@
                                 </div>
 
                                 <!-- <div class="dt-buttons"><button class="dt-button add-new btn btn-primary mb-3 mb-md-0"
-                                                                                                                                                    tabindex="0" aria-controls="DataTables_Table_0" type="button"
-                                                                                                                                                    data-bs-toggle="modal" data-bs-target="#addPermissionModal"><span>Add
-                                                                                                                                                        Book</span></button> </div> -->
+                                                                                                                                                                                    tabindex="0" aria-controls="DataTables_Table_0" type="button"
+                                                                                                                                                                                    data-bs-toggle="modal" data-bs-target="#addPermissionModal"><span>Add
+                                                                                                                                                                                        Book</span></button> </div> -->
                                 <div class="dt-buttons"><a href='{{ route('adminAddCompeny') }}'
                                         class="dt-button add-new btn btn-primary mb-3 mb-md-0" tabindex="0"
                                         aria-controls="DataTables_Table_0" data-bs-target="#addPermissionModal"><span>Add
@@ -99,12 +99,14 @@
                                                 data-bs-toggle="dropdown"><i
                                                     class="bx bx-dots-vertical-rounded"></i></button>
                                             <div class="dropdown-menu">
-                                                <form class="dropdown-item" action="/admin/books/edit" method="post">
-                                                    <button type="submit"><i class="bx bx-edit-alt me-1"></i> Edit</button>
-                                                </form>
-                                                <form class="dropdown-item" action="/admin/books/delete" method="post">
-                                                    <button type="submit"><i class="bx bx-trash me-1"></i> Delete</button>
-                                                </form>
+                                                <div class="dropdown-item" >
+                                                    <a href="{{ route('adminEditJob', $job->id) }}"><i
+                                                            class="bx bx-edit-alt me-1"></i> Edit</a>
+                                                </div>
+                                                <div class="dropdown-item" >
+                                                    <a href=href="{{ route('adminEditJob', $job->id) }}"><i
+                                                            class="bx bx-trash me-1"></i> Delete</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </td>
