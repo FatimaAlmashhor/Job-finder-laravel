@@ -64,7 +64,7 @@ class JobsController extends Controller
             'location' => 'required',
         ]);
 
-        $job =  Jobs::find($id);;
+        $job =  Jobs::find($id);
         $job->title = $request->title;
         $job->description = $request->des;
         $job->location = $request->location;
@@ -79,5 +79,16 @@ class JobsController extends Controller
             return redirect()->route('adminJobs')->with('message', 'job added successfully');
         };
         return redirect()->route('adminAddJob')->with('message', 'job failed');
+    }
+
+    function delete(Request $request, $id)
+    {
+        $job =  Jobs::find($id);
+        $job->is_active = 0;
+        if ($job->save()) {
+
+            return redirect()->route('adminJobs')->with('message', 'job delete successfully');
+        };
+        return redirect()->route('adminJobs')->with('message', 'job failed to deletion ');
     }
 }

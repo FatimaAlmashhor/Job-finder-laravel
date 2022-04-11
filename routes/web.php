@@ -75,7 +75,7 @@ Route::group(['middleware' => 'auth'], function () {
                 Route::post('/upload',  'upload')->name('adminUploadJob');
                 Route::get('/edit/{id}',  'edit')->name('adminEditJob');
                 Route::post('/update/{id}',  'update')->name('adminUpdateJob');
-                Route::get('/delete',  'delete')->name('adminDeleteJob');
+                Route::get('/delete/{id}',  'delete')->name('adminDeleteJob');
             });
 
             // compenies
