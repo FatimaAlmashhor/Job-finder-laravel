@@ -93,6 +93,9 @@ Route::group(['middleware' => 'auth'], function () {
                 Route::get('/',  'show')->name('adminMejers');
                 Route::get('/add',  'add')->name('adminAddMejer');
                 Route::post('/upload',  'upload')->name('adminUploadMejer');
+                Route::get('/edit/{id}',  'edit')->name('adminEditMejer');
+                Route::post('/update/{id}',  'update')->name('adminUpdateMejer');
+                Route::get('/delete/{id}',  'delete')->name('adminDeleteMejer');
             });
 
             // services
