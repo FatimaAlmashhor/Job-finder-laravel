@@ -83,6 +83,9 @@ Route::group(['middleware' => 'auth'], function () {
                 Route::get('/', 'show')->name('adminCompenies');
                 Route::get('/add',  'add')->name('adminAddCompeny');
                 Route::post('/upload',  'upload')->name('adminUploadCompeny');
+                Route::get('/edit/{id}',  'edit')->name('adminEditCompeny');
+                Route::post('/update/{id}',  'update')->name('adminUpdateCompeny');
+                Route::get('/delete/{id}',  'delete')->name('adminDeleteCompeny');
             });
 
             // mejers
