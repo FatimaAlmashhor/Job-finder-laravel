@@ -100,6 +100,9 @@ Route::group(['middleware' => 'auth'], function () {
                 Route::get('/', 'show')->name('adminServices');
                 Route::get('/add', 'add')->name('adminAddServices');
                 Route::post('/upload', 'upload')->name('adminUploadServices');
+                Route::get('/edit/{id}',  'edit')->name('adminEditServices');
+                Route::post('/update/{id}',  'update')->name('adminUpdateServices');
+                Route::get('/delete/{id}',  'delete')->name('adminDeleteServices');
             });
 
             // skills
